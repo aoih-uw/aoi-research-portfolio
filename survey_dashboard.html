@@ -1,0 +1,3713 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Survey Data Analysis Dashboard</title>
+    <style>
+        body {
+            font-family: 'Lexend Deca', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #4e79a7;
+            padding-bottom: 30px;
+        }
+        
+        .logo-container {
+            margin-bottom: 20px;
+        }
+        
+        .header-logo {
+            max-width: 200px;
+            max-height: 100px;
+            width: auto;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .title {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .description {
+            font-size: 1.2em;
+            color: #5a6c7d;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .chart-container {
+            background-color: white;
+            border: 1px solid #e1e8ed;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+            min-width: 500px;
+        }
+        
+        .chart-container:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .chart-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+            border-bottom: 2px solid #4e79a7;
+            padding-bottom: 10px;
+        }
+        
+        .chart-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        @media (max-width: 768px) {
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 20px;
+            }
+            .title {
+                font-size: 2em;
+            }
+        }
+        
+        .header-section {
+    margin-bottom: 25px;
+}
+
+.header-section:last-child {
+    margin-bottom: 0;
+}
+
+.contact-info {
+    border-top: 1px solid #e1e8ed;
+    padding-top: 20px;
+    margin-top: 25px;
+}
+
+.contact-links {
+    font-size: 1.1em;
+    color: #5a6c7d;
+    margin: 0;
+}
+
+.contact-link {
+    color: #4e79a7;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    color: #2c3e50;
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+    <div class="header-section">
+        <div class="logo-container">
+            <img src="logoAnimationFinal.gif" alt="Scientific Visuals Logo" class="header-logo">
+        </div>
+        <h1 class="title">Scientific Visuals Interview Results</h1>
+    </div>
+    
+    <div class="header-section">
+        <p class="description">
+            Thank you for your participation in our survey. We truly appreciate your time answering our questions.
+        </p>
+        <p class="description">
+            Below are figures showing the responses from 29 researchers across various roles including PhD students, postdocs,
+            faculty, and industry researchers, exploring their practices, preferences, and pain points in creating and
+            using scientific visualizations.
+        </p>
+    </div>
+    
+    <div class="header-section contact-info">
+        <p class="contact-links">
+            <a href="mailto:aoih@uw.edu" class="contact-link">aoih@uw.edu</a> | 
+            <a href="https://zukanstudio.com" target="_blank" class="contact-link">zukanstudio.com</a>
+        </p>
+    </div>
+</div>
+        
+        <div class="charts-grid">
+
+                            <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+                            <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.8.0"></script>
+                            <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+                            
+            <div class="chart-container">
+                <div class="chart-title">Majority of respondents are PhD Students/Postdocs (Total N = 29)</div>
+                <div class="chart-wrapper">
+                    <div id="chart-chart1"></div>
+                </div>
+                <script type="text/javascript">
+                    vegaEmbed('#chart-chart1', {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "config": {
+    "axis": {
+      "labelFont": "Lexend Deca",
+      "labelFontSize": 12,
+      "titleFont": "Lexend Deca",
+      "titleFontSize": 12
+    },
+    "legend": {
+      "labelFont": "Lexend Deca",
+      "labelFontSize": 13,
+      "titleFont": "Lexend Deca",
+      "titleFontSize": 14
+    },
+    "text": {
+      "font": "Lexend Deca",
+      "fontSize": 12
+    },
+    "title": {
+      "font": "Lexend Deca",
+      "fontSize": 18
+    }
+  },
+  "data": {
+    "name": "data-0305c24dabb695265d682411c94debe0"
+  },
+  "datasets": {
+    "data-0305c24dabb695265d682411c94debe0": [
+      {
+        "Count of Current role": 16,
+        "Display_Label": "PhD Student",
+        "Row Labels": "PhD Student"
+      },
+      {
+        "Count of Current role": 8,
+        "Display_Label": "Postdoc",
+        "Row Labels": "Postdoc"
+      },
+      {
+        "Count of Current role": 2,
+        "Display_Label": "Principal Investigator",
+        "Row Labels": "Principal Investigator"
+      },
+      {
+        "Count of Current role": 1,
+        "Display_Label": "Research Engineer",
+        "Row Labels": "Research Engineer"
+      },
+      {
+        "Count of Current role": 1,
+        "Display_Label": "Research scientist (comm.)",
+        "Row Labels": "Research scientist (commercial)"
+      },
+      {
+        "Count of Current role": 1,
+        "Display_Label": "UX researcher",
+        "Row Labels": "UX researcher"
+      }
+    ]
+  },
+  "encoding": {
+    "color": {
+      "field": "Display_Label",
+      "legend": null,
+      "scale": {
+        "scheme": "tableau10"
+      },
+      "type": "nominal"
+    },
+    "tooltip": [
+      {
+        "field": "Row Labels",
+        "title": "Role",
+        "type": "nominal"
+      },
+      {
+        "field": "Count of Current role",
+        "title": "Count",
+        "type": "quantitative"
+      }
+    ],
+    "x": {
+      "field": "Count of Current role",
+      "title": "Count",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "Display_Label",
+      "sort": "-x",
+      "title": "Role",
+      "type": "nominal"
+    }
+  },
+  "height": 200,
+  "mark": {
+    "type": "bar"
+  },
+  "resolve": {
+    "scale": {
+      "y": "independent"
+    }
+  },
+  "width": 300
+}).catch(console.error);
+                </script>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Have you paid for an image, illustration, visual to be used for a paper, poster, or talk?</div>
+                <div class="chart-wrapper">
+                    <div id="chart-chart2"></div>
+                </div>
+                <script type="text/javascript">
+                    vegaEmbed('#chart-chart2', {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "config": {
+    "axis": {
+      "labelFont": "Lexend Deca",
+      "titleFont": "Lexend Deca"
+    },
+    "legend": {
+      "labelFont": "Lexend Deca",
+      "labelFontSize": 13,
+      "titleFont": "Lexend Deca",
+      "titleFontSize": 14
+    },
+    "text": {
+      "font": "Lexend Deca"
+    },
+    "title": {
+      "font": "Lexend Deca",
+      "fontSize": 18
+    }
+  },
+  "data": {
+    "name": "data-10d2ab90d683865f85d23fba57d85af0"
+  },
+  "datasets": {
+    "data-10d2ab90d683865f85d23fba57d85af0": [
+      {
+        "Answer": "No",
+        "Frequency": 15,
+        "Q ID": "p_1",
+        "Role": "PhD Student"
+      },
+      {
+        "Answer": "Yes",
+        "Frequency": 2,
+        "Q ID": "p_1",
+        "Role": "PhD Student"
+      },
+      {
+        "Answer": "No",
+        "Frequency": 7,
+        "Q ID": "p_1",
+        "Role": "Postdoc"
+      },
+      {
+        "Answer": "Yes",
+        "Frequency": 2,
+        "Q ID": "p_1",
+        "Role": "Postdoc"
+      },
+      {
+        "Answer": "Yes",
+        "Frequency": 4,
+        "Q ID": "p_1",
+        "Role": "Principal Investigator"
+      },
+      {
+        "Answer": "No",
+        "Frequency": 1,
+        "Q ID": "p_1",
+        "Role": "Research Engineer"
+      },
+      {
+        "Answer": "No",
+        "Frequency": 1,
+        "Q ID": "p_1",
+        "Role": "Research scientist (commercial)"
+      },
+      {
+        "Answer": "No",
+        "Frequency": 2,
+        "Q ID": "p_1",
+        "Role": "UX researcher"
+      }
+    ]
+  },
+  "encoding": {
+    "color": {
+      "field": "Answer",
+      "scale": {
+        "domain": [
+          "No",
+          "Yes"
+        ],
+        "range": [
+          "#f28e2c",
+          "#4e79a7"
+        ]
+      },
+      "type": "nominal"
+    },
+    "tooltip": [
+      {
+        "field": "Role",
+        "type": "nominal"
+      },
+      {
+        "field": "Answer",
+        "type": "nominal"
+      },
+      {
+        "field": "Frequency",
+        "type": "quantitative"
+      }
+    ],
+    "x": {
+      "field": "Frequency",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "Role",
+      "sort": "-x",
+      "type": "nominal"
+    }
+  },
+  "height": 200,
+  "mark": {
+    "type": "bar"
+  },
+  "width": 300
+}).catch(console.error);
+                </script>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">In general, what are your metrics for success in your research/work?</div>
+                <div class="chart-wrapper">
+                    <div id="chart-chart3"></div>
+                </div>
+                <script type="text/javascript">
+                    vegaEmbed('#chart-chart3', {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "config": {
+    "axis": {
+      "labelFont": "Lexend Deca",
+      "titleFont": "Lexend Deca"
+    },
+    "legend": {
+      "labelFont": "Lexend Deca",
+      "labelFontSize": 13,
+      "titleFont": "Lexend Deca",
+      "titleFontSize": 14
+    },
+    "text": {
+      "font": "Lexend Deca"
+    },
+    "title": {
+      "font": "Lexend Deca",
+      "fontSize": 18
+    }
+  },
+  "data": {
+    "name": "data-98d7f9a9ffed7376780220281ab7ed33"
+  },
+  "datasets": {
+    "data-98d7f9a9ffed7376780220281ab7ed33": [
+      {
+        "Frequency": 16,
+        "Percentage": 41.03,
+        "Q": "q_1",
+        "Theme": "Publications"
+      },
+      {
+        "Frequency": 11,
+        "Percentage": 28.21,
+        "Q": "q_1",
+        "Theme": "High quality methods and results"
+      },
+      {
+        "Frequency": 8,
+        "Percentage": 20.51,
+        "Q": "q_1",
+        "Theme": "Contribution to field"
+      },
+      {
+        "Frequency": 4,
+        "Percentage": 10.26,
+        "Q": "q_1",
+        "Theme": "Personal satisfaction"
+      }
+    ]
+  },
+  "height": 200,
+  "layer": [
+    {
+      "encoding": {
+        "color": {
+          "field": "Theme",
+          "legend": {
+            "labelLimit": 0
+          },
+          "scale": {
+            "scheme": "tableau10"
+          },
+          "type": "nominal"
+        },
+        "theta": {
+          "field": "Frequency",
+          "stack": true,
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Theme",
+            "title": "Theme",
+            "type": "nominal"
+          },
+          {
+            "field": "Frequency",
+            "title": "Count",
+            "type": "quantitative"
+          },
+          {
+            "field": "Percentage",
+            "format": ".1f",
+            "title": "Percentage",
+            "type": "quantitative"
+          }
+        ]
+      },
+      "mark": {
+        "innerRadius": 60,
+        "outerRadius": 120,
+        "type": "arc"
+      }
+    },
+    {
+      "encoding": {
+        "color": {
+          "field": "Theme",
+          "legend": {
+            "labelLimit": 0
+          },
+          "scale": {
+            "scheme": "tableau10"
+          },
+          "type": "nominal"
+        },
+        "text": {
+          "field": "Percentage_Text",
+          "type": "nominal"
+        },
+        "theta": {
+          "field": "Frequency",
+          "stack": true,
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Theme",
+            "title": "Theme",
+            "type": "nominal"
+          },
+          {
+            "field": "Frequency",
+            "title": "Count",
+            "type": "quantitative"
+          },
+          {
+            "field": "Percentage",
+            "format": ".1f",
+            "title": "Percentage",
+            "type": "quantitative"
+          }
+        ]
+      },
+      "mark": {
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "radius": 150,
+        "type": "text"
+      },
+      "transform": [
+        {
+          "as": "Percentage_Text",
+          "calculate": "datum.Percentage + '%'"
+        }
+      ]
+    }
+  ],
+  "width": 300
+}).catch(console.error);
+                </script>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">What kinds of illustrations would be most useful for your work?</div>
+                <div class="chart-wrapper">
+                    <div id="chart-chart4"></div>
+                </div>
+                <script type="text/javascript">
+                    vegaEmbed('#chart-chart4', {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "config": {
+    "axis": {
+      "labelFont": "Lexend Deca",
+      "titleFont": "Lexend Deca"
+    },
+    "legend": {
+      "labelFont": "Lexend Deca",
+      "labelFontSize": 13,
+      "titleFont": "Lexend Deca",
+      "titleFontSize": 14
+    },
+    "text": {
+      "font": "Lexend Deca"
+    },
+    "title": {
+      "font": "Lexend Deca",
+      "fontSize": 18
+    }
+  },
+  "data": {
+    "name": "data-820ec12f04bd2362e05212a4cbb146f8"
+  },
+  "datasets": {
+    "data-820ec12f04bd2362e05212a4cbb146f8": [
+      {
+        "Frequency": 14,
+        "Percentage": 21.88,
+        "Q": "q_10",
+        "Theme": "Anatomical parts"
+      },
+      {
+        "Frequency": 14,
+        "Percentage": 21.88,
+        "Q": "q_10",
+        "Theme": "Animal Model"
+      },
+      {
+        "Frequency": 13,
+        "Percentage": 20.31,
+        "Q": "q_10",
+        "Theme": "Experiment Method Schematic"
+      },
+      {
+        "Frequency": 12,
+        "Percentage": 18.75,
+        "Q": "q_10",
+        "Theme": "Experimental hardware"
+      },
+      {
+        "Frequency": 3,
+        "Percentage": 4.69,
+        "Q": "q_10",
+        "Theme": "Flow charts/Timelines/Tables"
+      },
+      {
+        "Frequency": 3,
+        "Percentage": 4.69,
+        "Q": "q_10",
+        "Theme": "Schematic Icons"
+      },
+      {
+        "Frequency": 2,
+        "Percentage": 3.12,
+        "Q": "q_10",
+        "Theme": "Child friendly art"
+      },
+      {
+        "Frequency": 1,
+        "Percentage": 1.56,
+        "Q": "q_10",
+        "Theme": "Animations"
+      },
+      {
+        "Frequency": 1,
+        "Percentage": 1.56,
+        "Q": "q_10",
+        "Theme": "Environment/Ecosystem Illustrations"
+      },
+      {
+        "Frequency": 1,
+        "Percentage": 1.56,
+        "Q": "q_10",
+        "Theme": "Neural Network Diagram"
+      }
+    ]
+  },
+  "height": 200,
+  "layer": [
+    {
+      "encoding": {
+        "color": {
+          "field": "Theme",
+          "legend": {
+            "labelLimit": 0
+          },
+          "scale": {
+            "scheme": "tableau10"
+          },
+          "type": "nominal"
+        },
+        "theta": {
+          "field": "Frequency",
+          "stack": true,
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Theme",
+            "title": "Theme",
+            "type": "nominal"
+          },
+          {
+            "field": "Frequency",
+            "title": "Count",
+            "type": "quantitative"
+          },
+          {
+            "field": "Percentage",
+            "format": ".1f",
+            "title": "Percentage",
+            "type": "quantitative"
+          }
+        ]
+      },
+      "mark": {
+        "innerRadius": 60,
+        "outerRadius": 120,
+        "type": "arc"
+      }
+    },
+    {
+      "encoding": {
+        "color": {
+          "field": "Theme",
+          "legend": {
+            "labelLimit": 0
+          },
+          "scale": {
+            "scheme": "tableau10"
+          },
+          "type": "nominal"
+        },
+        "text": {
+          "field": "Percentage_Text",
+          "type": "nominal"
+        },
+        "theta": {
+          "field": "Frequency",
+          "stack": true,
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Theme",
+            "title": "Theme",
+            "type": "nominal"
+          },
+          {
+            "field": "Frequency",
+            "title": "Count",
+            "type": "quantitative"
+          },
+          {
+            "field": "Percentage",
+            "format": ".1f",
+            "title": "Percentage",
+            "type": "quantitative"
+          }
+        ]
+      },
+      "mark": {
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "radius": 150,
+        "type": "text"
+      },
+      "transform": [
+        {
+          "as": "Percentage_Text",
+          "calculate": "datum.Percentage + '%'"
+        }
+      ]
+    }
+  ],
+  "width": 300
+}).catch(console.error);
+                </script>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">What kind of feedback do you give on other's visuals?</div>
+                <div class="chart-wrapper">
+                    <div id="chart-chart5"></div>
+                </div>
+                <script type="text/javascript">
+                    vegaEmbed('#chart-chart5', {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "config": {
+    "axis": {
+      "labelFont": "Lexend Deca",
+      "titleFont": "Lexend Deca"
+    },
+    "legend": {
+      "labelFont": "Lexend Deca",
+      "labelFontSize": 13,
+      "titleFont": "Lexend Deca",
+      "titleFontSize": 14
+    },
+    "text": {
+      "font": "Lexend Deca"
+    },
+    "title": {
+      "font": "Lexend Deca",
+      "fontSize": 18
+    }
+  },
+  "data": {
+    "name": "data-4b7137cf6c71fdbbcab5f28ced9227ba"
+  },
+  "datasets": {
+    "data-4b7137cf6c71fdbbcab5f28ced9227ba": [
+      {
+        "Frequency": 5,
+        "Percentage": 23.81,
+        "Q": "q_11",
+        "Theme": "Clarity and conciseness of figure message"
+      },
+      {
+        "Frequency": 5,
+        "Percentage": 23.81,
+        "Q": "q_11",
+        "Theme": "Style Aesthetics"
+      },
+      {
+        "Frequency": 4,
+        "Percentage": 19.05,
+        "Q": "q_11",
+        "Theme": "Readibility (e.g. Appropriate font size)"
+      },
+      {
+        "Frequency": 3,
+        "Percentage": 14.29,
+        "Q": "q_11",
+        "Theme": "Correct figure labels"
+      },
+      {
+        "Frequency": 2,
+        "Percentage": 9.52,
+        "Q": "q_11",
+        "Theme": "Colorblind Accessibility"
+      },
+      {
+        "Frequency": 2,
+        "Percentage": 9.52,
+        "Q": "q_11",
+        "Theme": "Image resolution (e.g.  unpixelated)"
+      }
+    ]
+  },
+  "height": 200,
+  "layer": [
+    {
+      "encoding": {
+        "color": {
+          "field": "Theme",
+          "legend": {
+            "labelLimit": 0
+          },
+          "scale": {
+            "scheme": "tableau10"
+          },
+          "type": "nominal"
+        },
+        "theta": {
+          "field": "Frequency",
+          "stack": true,
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Theme",
+            "title": "Theme",
+            "type": "nominal"
+          },
+          {
+            "field": "Frequency",
+            "title": "Count",
+            "type": "quantitative"
+          },
+          {
+            "field": "Percentage",
+            "format": ".1f",
+            "title": "Percentage",
+            "type": "quantitative"
+          }
+        ]
+      },
+      "mark": {
+        "innerRadius": 60,
+        "outerRadius": 120,
+        "type": "arc"
+      }
+    },
+    {
+      "encoding": {
+        "color": {
+          "field": "Theme",
+          "legend": {
+            "labelLimit": 0
+          },
+          "scale": {
+            "scheme": "tableau10"
+          },
+          "type": "nominal"
+        },
+        "text": {
+          "field": "Percentage_Text",
+          "type": "nominal"
+        },
+        "theta": {
+          "field": "Frequency",
+          "stack": true,
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Theme",
+            "title": "Theme",
+            "type": "nominal"
+          },
+          {
+            "field": "Frequency",
+            "title": "Count",
+            "type": "quantitative"
+          },
+          {
+            "field": "Percentage",
+            "format": ".1f",
+            "title": "Percentage",
+            "type": "quantitative"
+          }
+        ]
+      },
+      "mark": {
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "radius": 150,
+        "type": "text"
+      },
+      "transform": [
+        {
+          "as": "Percentage_Text",
+          "calculate": "datum.Percentage + '%'"
+        }
+      ]
+    }
+  ],
+  "width": 300
+}).catch(console.error);
+                </script>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Do you have a website for yourself?</div>
+                <div class="chart-wrapper">
+                    <div id="chart-chart6"></div>
+                </div>
+                <script type="text/javascript">
+                    vegaEmbed('#chart-chart6', {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "config": {
+    "axis": {
+      "labelFont": "Lexend Deca",
+      "titleFont": "Lexend Deca"
+    },
+    "legend": {
+      "labelFont": "Lexend Deca",
+      "labelFontSize": 13,
+      "titleFont": "Lexend Deca",
+      "titleFontSize": 14
+    },
+    "text": {
+      "font": "Lexend Deca"
+    },
+    "title": {
+      "font": "Lexend Deca",
+      "fontSize": 18
+    }
+  },
+  "data": {
+    "name": "data-7dd11d7f7d9da78c8335070bc28f67ec"
+  },
+  "datasets": {
+    "data-7dd11d7f7d9da78c8335070bc28f67ec": [
+      {
+        "Frequency": 15,
+        "Percentage": 53.57,
+        "Q": "q_12",
+        "Theme": "No"
+      },
+      {
+        "Frequency": 13,
+        "Percentage": 46.43,
+        "Q": "q_12",
+        "Theme": "Yes"
+      }
+    ]
+  },
+  "height": 200,
+  "layer": [
+    {
+      "encoding": {
+        "color": {
+          "field": "Theme",
+          "legend": {
+            "labelLimit": 0
+          },
+          "scale": {
+            "scheme": "tableau10"
+          },
+          "type": "nominal"
+        },
+        "theta": {
+          "field": "Frequency",
+          "stack": true,
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Theme",
+            "title": "Theme",
+            "type": "nominal"
+          },
+          {
+            "field": "Frequency",
+            "title": "Count",
+            "type": "quantitative"
+          },
+          {
+            "field": "Percentage",
+            "format": ".1f",
+            "title": "Percentage",
+            "type": "quantitative"
+          }
+        ]
+      },
+      "mark": {
+        "innerRadius": 60,
+        "outerRadius": 120,
+        "type": "arc"
+      }
+    },
+    {
+      "encoding": {
+        "color": {
+          "field": "Theme",
+          "legend": {
+            "labelLimit": 0
+          },
+          "scale": {
+            "scheme": "tableau10"
+          },
+          "type": "nominal"
+        },
+        "text": {
+          "field": "Percentage_Text",
+          "type": "nominal"
+        },
+        "theta": {
+          "field": "Frequency",
+          "stack": true,
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Theme",
+            "title": "Theme",
+            "type": "nominal"
+          },
+          {
+            "field": "Frequency",
+            "title": "Count",
+            "type": "quantitative"
+          },
+          {
+            "field": "Percentage",
+            "format": ".1f",
+            "title": "Percentage",
+            "type": "quantitative"
+          }
+        ]
+      },
+      "mark": {
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "radius": 150,
+        "type": "text"
+      },
+      "transform": [
+        {
+          "as": "Percentage_Text",
+          "calculate": "datum.Percentage + '%'"
+        }
+      ]
+    }
+  ],
+  "width": 300
+}).catch(console.error);
+                </script>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">What would you say the biggest pain is in creating visuals for your work? What takes up the most time?</div>
+                <div class="chart-wrapper">
+                    <div id="chart-chart7"></div>
+                </div>
+                <script type="text/javascript">
+                    vegaEmbed('#chart-chart7', {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "config": {
+    "axis": {
+      "labelFont": "Lexend Deca",
+      "titleFont": "Lexend Deca"
+    },
+    "legend": {
+      "labelFont": "Lexend Deca",
+      "labelFontSize": 13,
+      "titleFont": "Lexend Deca",
+      "titleFontSize": 14
+    },
+    "text": {
+      "font": "Lexend Deca"
+    },
+    "title": {
+      "font": "Lexend Deca",
+      "fontSize": 18
+    }
+  },
+  "data": {
+    "name": "data-833ba537c89b424444cbd4a9f0e33e83"
+  },
+  "datasets": {
+    "data-833ba537c89b424444cbd4a9f0e33e83": [
+      {
+        "Frequency": 16,
+        "Percentage": 39.02,
+        "Q": "q_2",
+        "Theme": "Formatting and standardizing figure style"
+      },
+      {
+        "Frequency": 8,
+        "Percentage": 19.51,
+        "Q": "q_2",
+        "Theme": "Determing effective storytelling"
+      },
+      {
+        "Frequency": 7,
+        "Percentage": 17.07,
+        "Q": "q_2",
+        "Theme": "Learning and using visualization software"
+      },
+      {
+        "Frequency": 5,
+        "Percentage": 12.2,
+        "Q": "q_2",
+        "Theme": "Physically drawing out visuals"
+      },
+      {
+        "Frequency": 3,
+        "Percentage": 7.32,
+        "Q": "q_2",
+        "Theme": "Creating aesthetically pleasing visuals"
+      },
+      {
+        "Frequency": 2,
+        "Percentage": 4.88,
+        "Q": "q_2",
+        "Theme": "Finding reference images"
+      }
+    ]
+  },
+  "height": 200,
+  "layer": [
+    {
+      "encoding": {
+        "color": {
+          "field": "Theme",
+          "legend": {
+            "labelLimit": 0
+          },
+          "scale": {
+            "scheme": "tableau10"
+          },
+          "type": "nominal"
+        },
+        "theta": {
+          "field": "Frequency",
+          "stack": true,
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Theme",
+            "title": "Theme",
+            "type": "nominal"
+          },
+          {
+            "field": "Frequency",
+            "title": "Count",
+            "type": "quantitative"
+          },
+          {
+            "field": "Percentage",
+            "format": ".1f",
+            "title": "Percentage",
+            "type": "quantitative"
+          }
+        ]
+      },
+      "mark": {
+        "innerRadius": 60,
+        "outerRadius": 120,
+        "type": "arc"
+      }
+    },
+    {
+      "encoding": {
+        "color": {
+          "field": "Theme",
+          "legend": {
+            "labelLimit": 0
+          },
+          "scale": {
+            "scheme": "tableau10"
+          },
+          "type": "nominal"
+        },
+        "text": {
+          "field": "Percentage_Text",
+          "type": "nominal"
+        },
+        "theta": {
+          "field": "Frequency",
+          "stack": true,
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Theme",
+            "title": "Theme",
+            "type": "nominal"
+          },
+          {
+            "field": "Frequency",
+            "title": "Count",
+            "type": "quantitative"
+          },
+          {
+            "field": "Percentage",
+            "format": ".1f",
+            "title": "Percentage",
+            "type": "quantitative"
+          }
+        ]
+      },
+      "mark": {
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "radius": 150,
+        "type": "text"
+      },
+      "transform": [
+        {
+          "as": "Percentage_Text",
+          "calculate": "datum.Percentage + '%'"
+        }
+      ]
+    }
+  ],
+  "width": 300
+}).catch(console.error);
+                </script>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">What is the main value visuals provide when you present your work?</div>
+                <div class="chart-wrapper">
+                    <div id="chart-chart8"></div>
+                </div>
+                <script type="text/javascript">
+                    vegaEmbed('#chart-chart8', {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "config": {
+    "axis": {
+      "labelFont": "Lexend Deca",
+      "titleFont": "Lexend Deca"
+    },
+    "legend": {
+      "labelFont": "Lexend Deca",
+      "labelFontSize": 13,
+      "titleFont": "Lexend Deca",
+      "titleFontSize": 14
+    },
+    "text": {
+      "font": "Lexend Deca"
+    },
+    "title": {
+      "font": "Lexend Deca",
+      "fontSize": 18
+    }
+  },
+  "data": {
+    "name": "data-8d7ea872dfe200674bc1d30d886a76b9"
+  },
+  "datasets": {
+    "data-8d7ea872dfe200674bc1d30d886a76b9": [
+      {
+        "Frequency": 23,
+        "Percentage": 65.71,
+        "Q": "q_3",
+        "Theme": "Clearly and succinctly communicate ideas"
+      },
+      {
+        "Frequency": 7,
+        "Percentage": 20.0,
+        "Q": "q_3",
+        "Theme": "To increase viewer engagement"
+      },
+      {
+        "Frequency": 3,
+        "Percentage": 8.57,
+        "Q": "q_3",
+        "Theme": "To make work look professional"
+      },
+      {
+        "Frequency": 2,
+        "Percentage": 5.71,
+        "Q": "q_3",
+        "Theme": "Aids in researcher's understanding of their own work"
+      }
+    ]
+  },
+  "height": 200,
+  "layer": [
+    {
+      "encoding": {
+        "color": {
+          "field": "Theme",
+          "legend": {
+            "labelLimit": 0
+          },
+          "scale": {
+            "scheme": "tableau10"
+          },
+          "type": "nominal"
+        },
+        "theta": {
+          "field": "Frequency",
+          "stack": true,
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Theme",
+            "title": "Theme",
+            "type": "nominal"
+          },
+          {
+            "field": "Frequency",
+            "title": "Count",
+            "type": "quantitative"
+          },
+          {
+            "field": "Percentage",
+            "format": ".1f",
+            "title": "Percentage",
+            "type": "quantitative"
+          }
+        ]
+      },
+      "mark": {
+        "innerRadius": 60,
+        "outerRadius": 120,
+        "type": "arc"
+      }
+    },
+    {
+      "encoding": {
+        "color": {
+          "field": "Theme",
+          "legend": {
+            "labelLimit": 0
+          },
+          "scale": {
+            "scheme": "tableau10"
+          },
+          "type": "nominal"
+        },
+        "text": {
+          "field": "Percentage_Text",
+          "type": "nominal"
+        },
+        "theta": {
+          "field": "Frequency",
+          "stack": true,
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Theme",
+            "title": "Theme",
+            "type": "nominal"
+          },
+          {
+            "field": "Frequency",
+            "title": "Count",
+            "type": "quantitative"
+          },
+          {
+            "field": "Percentage",
+            "format": ".1f",
+            "title": "Percentage",
+            "type": "quantitative"
+          }
+        ]
+      },
+      "mark": {
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "radius": 150,
+        "type": "text"
+      },
+      "transform": [
+        {
+          "as": "Percentage_Text",
+          "calculate": "datum.Percentage + '%'"
+        }
+      ]
+    }
+  ],
+  "width": 300
+}).catch(console.error);
+                </script>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">How do you feel when you see other researchers use AI generated images for their work?</div>
+                <div class="chart-wrapper">
+                    <div id="chart-chart9"></div>
+                </div>
+                <script type="text/javascript">
+                    vegaEmbed('#chart-chart9', {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "config": {
+    "axis": {
+      "labelFont": "Lexend Deca",
+      "titleFont": "Lexend Deca"
+    },
+    "legend": {
+      "labelFont": "Lexend Deca",
+      "labelFontSize": 13,
+      "titleFont": "Lexend Deca",
+      "titleFontSize": 14
+    },
+    "text": {
+      "font": "Lexend Deca"
+    },
+    "title": {
+      "font": "Lexend Deca",
+      "fontSize": 18
+    }
+  },
+  "data": {
+    "name": "data-34901456aa53c464b80042ab46f9a50a"
+  },
+  "datasets": {
+    "data-34901456aa53c464b80042ab46f9a50a": [
+      {
+        "Frequency": 8,
+        "Percentage": 40.0,
+        "Q": "q_4",
+        "Theme": "Dislike"
+      },
+      {
+        "Frequency": 8,
+        "Percentage": 40.0,
+        "Q": "q_4",
+        "Theme": "Ok if it isnt distracting and use is disclosed"
+      },
+      {
+        "Frequency": 2,
+        "Percentage": 10.0,
+        "Q": "q_4",
+        "Theme": "Havent noticed AI use"
+      },
+      {
+        "Frequency": 2,
+        "Percentage": 10.0,
+        "Q": "q_4",
+        "Theme": "Neutral"
+      }
+    ]
+  },
+  "height": 200,
+  "layer": [
+    {
+      "encoding": {
+        "color": {
+          "field": "Theme",
+          "legend": {
+            "labelLimit": 0
+          },
+          "scale": {
+            "scheme": "tableau10"
+          },
+          "type": "nominal"
+        },
+        "theta": {
+          "field": "Frequency",
+          "stack": true,
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Theme",
+            "title": "Theme",
+            "type": "nominal"
+          },
+          {
+            "field": "Frequency",
+            "title": "Count",
+            "type": "quantitative"
+          },
+          {
+            "field": "Percentage",
+            "format": ".1f",
+            "title": "Percentage",
+            "type": "quantitative"
+          }
+        ]
+      },
+      "mark": {
+        "innerRadius": 60,
+        "outerRadius": 120,
+        "type": "arc"
+      }
+    },
+    {
+      "encoding": {
+        "color": {
+          "field": "Theme",
+          "legend": {
+            "labelLimit": 0
+          },
+          "scale": {
+            "scheme": "tableau10"
+          },
+          "type": "nominal"
+        },
+        "text": {
+          "field": "Percentage_Text",
+          "type": "nominal"
+        },
+        "theta": {
+          "field": "Frequency",
+          "stack": true,
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Theme",
+            "title": "Theme",
+            "type": "nominal"
+          },
+          {
+            "field": "Frequency",
+            "title": "Count",
+            "type": "quantitative"
+          },
+          {
+            "field": "Percentage",
+            "format": ".1f",
+            "title": "Percentage",
+            "type": "quantitative"
+          }
+        ]
+      },
+      "mark": {
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "radius": 150,
+        "type": "text"
+      },
+      "transform": [
+        {
+          "as": "Percentage_Text",
+          "calculate": "datum.Percentage + '%'"
+        }
+      ]
+    }
+  ],
+  "width": 300
+}).catch(console.error);
+                </script>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Why haven't you paid for a scientific visual?</div>
+                <div class="chart-wrapper">
+                    <div id="chart-chart10"></div>
+                </div>
+                <script type="text/javascript">
+                    vegaEmbed('#chart-chart10', {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "config": {
+    "axis": {
+      "labelFont": "Lexend Deca",
+      "titleFont": "Lexend Deca"
+    },
+    "legend": {
+      "labelFont": "Lexend Deca",
+      "labelFontSize": 13,
+      "titleFont": "Lexend Deca",
+      "titleFontSize": 14
+    },
+    "text": {
+      "font": "Lexend Deca"
+    },
+    "title": {
+      "font": "Lexend Deca",
+      "fontSize": 18
+    }
+  },
+  "data": {
+    "name": "data-aa37e6287dc38c4bbe738938f3cf9e33"
+  },
+  "datasets": {
+    "data-aa37e6287dc38c4bbe738938f3cf9e33": [
+      {
+        "Frequency": 11,
+        "Percentage": 42.31,
+        "Q": "q_5",
+        "Theme": "Lack of funds"
+      },
+      {
+        "Frequency": 7,
+        "Percentage": 26.92,
+        "Q": "q_5",
+        "Theme": "Lack of awareness/Need"
+      },
+      {
+        "Frequency": 6,
+        "Percentage": 23.08,
+        "Q": "q_5",
+        "Theme": "Can do myself"
+      },
+      {
+        "Frequency": 2,
+        "Percentage": 7.69,
+        "Q": "q_5",
+        "Theme": "Confidentiality concerns"
+      }
+    ]
+  },
+  "height": 200,
+  "layer": [
+    {
+      "encoding": {
+        "color": {
+          "field": "Theme",
+          "legend": {
+            "labelLimit": 0
+          },
+          "scale": {
+            "scheme": "tableau10"
+          },
+          "type": "nominal"
+        },
+        "theta": {
+          "field": "Frequency",
+          "stack": true,
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Theme",
+            "title": "Theme",
+            "type": "nominal"
+          },
+          {
+            "field": "Frequency",
+            "title": "Count",
+            "type": "quantitative"
+          },
+          {
+            "field": "Percentage",
+            "format": ".1f",
+            "title": "Percentage",
+            "type": "quantitative"
+          }
+        ]
+      },
+      "mark": {
+        "innerRadius": 60,
+        "outerRadius": 120,
+        "type": "arc"
+      }
+    },
+    {
+      "encoding": {
+        "color": {
+          "field": "Theme",
+          "legend": {
+            "labelLimit": 0
+          },
+          "scale": {
+            "scheme": "tableau10"
+          },
+          "type": "nominal"
+        },
+        "text": {
+          "field": "Percentage_Text",
+          "type": "nominal"
+        },
+        "theta": {
+          "field": "Frequency",
+          "stack": true,
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Theme",
+            "title": "Theme",
+            "type": "nominal"
+          },
+          {
+            "field": "Frequency",
+            "title": "Count",
+            "type": "quantitative"
+          },
+          {
+            "field": "Percentage",
+            "format": ".1f",
+            "title": "Percentage",
+            "type": "quantitative"
+          }
+        ]
+      },
+      "mark": {
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "radius": 150,
+        "type": "text"
+      },
+      "transform": [
+        {
+          "as": "Percentage_Text",
+          "calculate": "datum.Percentage + '%'"
+        }
+      ]
+    }
+  ],
+  "width": 300
+}).catch(console.error);
+                </script>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Would you rather pay money to access a library of scientific illustrations online or work with an artist to create customized illustrations?</div>
+                <div class="chart-wrapper">
+                    <div id="chart-chart11"></div>
+                </div>
+                <script type="text/javascript">
+                    vegaEmbed('#chart-chart11', {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "config": {
+    "axis": {
+      "labelFont": "Lexend Deca",
+      "titleFont": "Lexend Deca"
+    },
+    "legend": {
+      "labelFont": "Lexend Deca",
+      "labelFontSize": 13,
+      "titleFont": "Lexend Deca",
+      "titleFontSize": 14
+    },
+    "text": {
+      "font": "Lexend Deca"
+    },
+    "title": {
+      "font": "Lexend Deca",
+      "fontSize": 18
+    }
+  },
+  "data": {
+    "name": "data-f5ccc173a83f5f752fd6e7022408565f"
+  },
+  "datasets": {
+    "data-f5ccc173a83f5f752fd6e7022408565f": [
+      {
+        "Frequency": 18,
+        "Percentage": 62.07,
+        "Q": "q_6",
+        "Theme": "I'm open to either"
+      },
+      {
+        "Frequency": 6,
+        "Percentage": 20.69,
+        "Q": "q_6",
+        "Theme": "Access a library of scientific illustrations online"
+      },
+      {
+        "Frequency": 3,
+        "Percentage": 10.34,
+        "Q": "q_6",
+        "Theme": "Work with an artist"
+      },
+      {
+        "Frequency": 2,
+        "Percentage": 6.9,
+        "Q": "q_6",
+        "Theme": "Neither"
+      }
+    ]
+  },
+  "height": 200,
+  "layer": [
+    {
+      "encoding": {
+        "color": {
+          "field": "Theme",
+          "legend": {
+            "labelLimit": 0
+          },
+          "scale": {
+            "scheme": "tableau10"
+          },
+          "type": "nominal"
+        },
+        "theta": {
+          "field": "Frequency",
+          "stack": true,
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Theme",
+            "title": "Theme",
+            "type": "nominal"
+          },
+          {
+            "field": "Frequency",
+            "title": "Count",
+            "type": "quantitative"
+          },
+          {
+            "field": "Percentage",
+            "format": ".1f",
+            "title": "Percentage",
+            "type": "quantitative"
+          }
+        ]
+      },
+      "mark": {
+        "innerRadius": 60,
+        "outerRadius": 120,
+        "type": "arc"
+      }
+    },
+    {
+      "encoding": {
+        "color": {
+          "field": "Theme",
+          "legend": {
+            "labelLimit": 0
+          },
+          "scale": {
+            "scheme": "tableau10"
+          },
+          "type": "nominal"
+        },
+        "text": {
+          "field": "Percentage_Text",
+          "type": "nominal"
+        },
+        "theta": {
+          "field": "Frequency",
+          "stack": true,
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Theme",
+            "title": "Theme",
+            "type": "nominal"
+          },
+          {
+            "field": "Frequency",
+            "title": "Count",
+            "type": "quantitative"
+          },
+          {
+            "field": "Percentage",
+            "format": ".1f",
+            "title": "Percentage",
+            "type": "quantitative"
+          }
+        ]
+      },
+      "mark": {
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "radius": 150,
+        "type": "text"
+      },
+      "transform": [
+        {
+          "as": "Percentage_Text",
+          "calculate": "datum.Percentage + '%'"
+        }
+      ]
+    }
+  ],
+  "width": 300
+}).catch(console.error);
+                </script>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Which pricing method do you prefer?</div>
+                <div class="chart-wrapper">
+                    <div id="chart-chart12"></div>
+                </div>
+                <script type="text/javascript">
+                    vegaEmbed('#chart-chart12', {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "config": {
+    "axis": {
+      "labelFont": "Lexend Deca",
+      "titleFont": "Lexend Deca"
+    },
+    "legend": {
+      "labelFont": "Lexend Deca",
+      "labelFontSize": 13,
+      "titleFont": "Lexend Deca",
+      "titleFontSize": 14
+    },
+    "text": {
+      "font": "Lexend Deca"
+    },
+    "title": {
+      "font": "Lexend Deca",
+      "fontSize": 18
+    }
+  },
+  "data": {
+    "name": "data-fca4e63b8786f0ce9f40348f1d349cf7"
+  },
+  "datasets": {
+    "data-fca4e63b8786f0ce9f40348f1d349cf7": [
+      {
+        "Frequency": 12,
+        "Percentage": 48.0,
+        "Q": "q_7",
+        "Theme": "Hourly but if predictable"
+      },
+      {
+        "Frequency": 9,
+        "Percentage": 36.0,
+        "Q": "q_7",
+        "Theme": "Flat rate"
+      },
+      {
+        "Frequency": 3,
+        "Percentage": 12.0,
+        "Q": "q_7",
+        "Theme": "Subscription-based"
+      },
+      {
+        "Frequency": 1,
+        "Percentage": 4.0,
+        "Q": "q_7",
+        "Theme": "Hourly"
+      }
+    ]
+  },
+  "height": 200,
+  "layer": [
+    {
+      "encoding": {
+        "color": {
+          "field": "Theme",
+          "legend": {
+            "labelLimit": 0
+          },
+          "scale": {
+            "scheme": "tableau10"
+          },
+          "type": "nominal"
+        },
+        "theta": {
+          "field": "Frequency",
+          "stack": true,
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Theme",
+            "title": "Theme",
+            "type": "nominal"
+          },
+          {
+            "field": "Frequency",
+            "title": "Count",
+            "type": "quantitative"
+          },
+          {
+            "field": "Percentage",
+            "format": ".1f",
+            "title": "Percentage",
+            "type": "quantitative"
+          }
+        ]
+      },
+      "mark": {
+        "innerRadius": 60,
+        "outerRadius": 120,
+        "type": "arc"
+      }
+    },
+    {
+      "encoding": {
+        "color": {
+          "field": "Theme",
+          "legend": {
+            "labelLimit": 0
+          },
+          "scale": {
+            "scheme": "tableau10"
+          },
+          "type": "nominal"
+        },
+        "text": {
+          "field": "Percentage_Text",
+          "type": "nominal"
+        },
+        "theta": {
+          "field": "Frequency",
+          "stack": true,
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Theme",
+            "title": "Theme",
+            "type": "nominal"
+          },
+          {
+            "field": "Frequency",
+            "title": "Count",
+            "type": "quantitative"
+          },
+          {
+            "field": "Percentage",
+            "format": ".1f",
+            "title": "Percentage",
+            "type": "quantitative"
+          }
+        ]
+      },
+      "mark": {
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "radius": 150,
+        "type": "text"
+      },
+      "transform": [
+        {
+          "as": "Percentage_Text",
+          "calculate": "datum.Percentage + '%'"
+        }
+      ]
+    }
+  ],
+  "width": 300
+}).catch(console.error);
+                </script>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Which visualization software(s) do you use?</div>
+                <div class="chart-wrapper">
+                    <div id="chart-chart13"></div>
+                </div>
+                <script type="text/javascript">
+                    vegaEmbed('#chart-chart13', {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "config": {
+    "axis": {
+      "labelFont": "Lexend Deca",
+      "titleFont": "Lexend Deca"
+    },
+    "legend": {
+      "labelFont": "Lexend Deca",
+      "labelFontSize": 13,
+      "titleFont": "Lexend Deca",
+      "titleFontSize": 14
+    },
+    "text": {
+      "font": "Lexend Deca"
+    },
+    "title": {
+      "font": "Lexend Deca",
+      "fontSize": 18
+    }
+  },
+  "data": {
+    "name": "data-1b3735503f857e6223de147c59573e1a"
+  },
+  "datasets": {
+    "data-1b3735503f857e6223de147c59573e1a": [
+      {
+        "Frequency": 13,
+        "Percentage": 14.44,
+        "Q": "q_8",
+        "Theme": "Powerpoint"
+      },
+      {
+        "Frequency": 12,
+        "Percentage": 13.33,
+        "Q": "q_8",
+        "Theme": "Illustrator"
+      },
+      {
+        "Frequency": 11,
+        "Percentage": 12.22,
+        "Q": "q_8",
+        "Theme": "Inkscape"
+      },
+      {
+        "Frequency": 11,
+        "Percentage": 12.22,
+        "Q": "q_8",
+        "Theme": "R"
+      },
+      {
+        "Frequency": 9,
+        "Percentage": 10.0,
+        "Q": "q_8",
+        "Theme": "Google Slides"
+      },
+      {
+        "Frequency": 9,
+        "Percentage": 10.0,
+        "Q": "q_8",
+        "Theme": "Python"
+      },
+      {
+        "Frequency": 6,
+        "Percentage": 6.67,
+        "Q": "q_8",
+        "Theme": "Matlab"
+      },
+      {
+        "Frequency": 3,
+        "Percentage": 3.33,
+        "Q": "q_8",
+        "Theme": "Photoshop"
+      },
+      {
+        "Frequency": 2,
+        "Percentage": 2.22,
+        "Q": "q_8",
+        "Theme": "Biorender"
+      },
+      {
+        "Frequency": 2,
+        "Percentage": 2.22,
+        "Q": "q_8",
+        "Theme": "Procreate"
+      },
+      {
+        "Frequency": 1,
+        "Percentage": 1.11,
+        "Q": "q_8",
+        "Theme": "AI Tools"
+      },
+      {
+        "Frequency": 1,
+        "Percentage": 1.11,
+        "Q": "q_8",
+        "Theme": "Comsol"
+      },
+      {
+        "Frequency": 1,
+        "Percentage": 1.11,
+        "Q": "q_8",
+        "Theme": "Figma"
+      },
+      {
+        "Frequency": 1,
+        "Percentage": 1.11,
+        "Q": "q_8",
+        "Theme": "Google Draw"
+      },
+      {
+        "Frequency": 1,
+        "Percentage": 1.11,
+        "Q": "q_8",
+        "Theme": "Hand-Sketch"
+      },
+      {
+        "Frequency": 1,
+        "Percentage": 1.11,
+        "Q": "q_8",
+        "Theme": "Keynote"
+      },
+      {
+        "Frequency": 1,
+        "Percentage": 1.11,
+        "Q": "q_8",
+        "Theme": "Latex/Tikz"
+      },
+      {
+        "Frequency": 1,
+        "Percentage": 1.11,
+        "Q": "q_8",
+        "Theme": "Libre Express/Impress"
+      },
+      {
+        "Frequency": 1,
+        "Percentage": 1.11,
+        "Q": "q_8",
+        "Theme": "Obsidian"
+      },
+      {
+        "Frequency": 1,
+        "Percentage": 1.11,
+        "Q": "q_8",
+        "Theme": "Open Source Softwares"
+      },
+      {
+        "Frequency": 1,
+        "Percentage": 1.11,
+        "Q": "q_8",
+        "Theme": "Prism"
+      },
+      {
+        "Frequency": 1,
+        "Percentage": 1.11,
+        "Q": "q_8",
+        "Theme": "Prism Graph Pad"
+      }
+    ]
+  },
+  "height": 200,
+  "layer": [
+    {
+      "encoding": {
+        "color": {
+          "field": "Theme",
+          "legend": {
+            "labelLimit": 0
+          },
+          "scale": {
+            "scheme": "tableau20"
+          },
+          "type": "nominal"
+        },
+        "theta": {
+          "field": "Frequency",
+          "stack": true,
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Theme",
+            "title": "Theme",
+            "type": "nominal"
+          },
+          {
+            "field": "Frequency",
+            "title": "Count",
+            "type": "quantitative"
+          },
+          {
+            "field": "Percentage",
+            "format": ".1f",
+            "title": "Percentage",
+            "type": "quantitative"
+          }
+        ]
+      },
+      "mark": {
+        "innerRadius": 60,
+        "outerRadius": 120,
+        "type": "arc"
+      }
+    },
+    {
+      "encoding": {
+        "color": {
+          "field": "Theme",
+          "legend": {
+            "labelLimit": 0
+          },
+          "scale": {
+            "scheme": "tableau20"
+          },
+          "type": "nominal"
+        },
+        "text": {
+          "field": "Percentage_Text",
+          "type": "nominal"
+        },
+        "theta": {
+          "field": "Frequency",
+          "stack": true,
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Theme",
+            "title": "Theme",
+            "type": "nominal"
+          },
+          {
+            "field": "Frequency",
+            "title": "Count",
+            "type": "quantitative"
+          },
+          {
+            "field": "Percentage",
+            "format": ".1f",
+            "title": "Percentage",
+            "type": "quantitative"
+          }
+        ]
+      },
+      "mark": {
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "radius": 150,
+        "type": "text"
+      },
+      "transform": [
+        {
+          "as": "Percentage_Text",
+          "calculate": "datum.Percentage + '%'"
+        }
+      ]
+    }
+  ],
+  "width": 300
+}).catch(console.error);
+                </script>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Where do you get images/illustrations for your work?</div>
+                <div class="chart-wrapper">
+                    <div id="chart-chart14"></div>
+                </div>
+                <script type="text/javascript">
+                    vegaEmbed('#chart-chart14', {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "config": {
+    "axis": {
+      "labelFont": "Lexend Deca",
+      "titleFont": "Lexend Deca"
+    },
+    "legend": {
+      "labelFont": "Lexend Deca",
+      "labelFontSize": 13,
+      "titleFont": "Lexend Deca",
+      "titleFontSize": 14
+    },
+    "text": {
+      "font": "Lexend Deca"
+    },
+    "title": {
+      "font": "Lexend Deca",
+      "fontSize": 18
+    }
+  },
+  "data": {
+    "name": "data-98e08441f84a7800749656fdb26f78a8"
+  },
+  "datasets": {
+    "data-98e08441f84a7800749656fdb26f78a8": [
+      {
+        "Frequency": 17,
+        "Percentage": 28.33,
+        "Q": "q_9",
+        "Theme": "Google Images"
+      },
+      {
+        "Frequency": 10,
+        "Percentage": 16.67,
+        "Q": "q_9",
+        "Theme": "PI/Lab"
+      },
+      {
+        "Frequency": 8,
+        "Percentage": 13.33,
+        "Q": "q_9",
+        "Theme": "Biorender"
+      },
+      {
+        "Frequency": 6,
+        "Percentage": 10.0,
+        "Q": "q_9",
+        "Theme": "Stock Images"
+      },
+      {
+        "Frequency": 4,
+        "Percentage": 6.67,
+        "Q": "q_9",
+        "Theme": "Draw myself"
+      },
+      {
+        "Frequency": 3,
+        "Percentage": 5.0,
+        "Q": "q_9",
+        "Theme": "Canva"
+      },
+      {
+        "Frequency": 3,
+        "Percentage": 5.0,
+        "Q": "q_9",
+        "Theme": "Irasutoya"
+      },
+      {
+        "Frequency": 2,
+        "Percentage": 3.33,
+        "Q": "q_9",
+        "Theme": "Python"
+      },
+      {
+        "Frequency": 1,
+        "Percentage": 1.67,
+        "Q": "q_9",
+        "Theme": "Figma Community Assets"
+      },
+      {
+        "Frequency": 1,
+        "Percentage": 1.67,
+        "Q": "q_9",
+        "Theme": "Figures From Papers"
+      },
+      {
+        "Frequency": 1,
+        "Percentage": 1.67,
+        "Q": "q_9",
+        "Theme": "In-House Designer"
+      },
+      {
+        "Frequency": 1,
+        "Percentage": 1.67,
+        "Q": "q_9",
+        "Theme": "Inkscape"
+      },
+      {
+        "Frequency": 1,
+        "Percentage": 1.67,
+        "Q": "q_9",
+        "Theme": "Procreate"
+      },
+      {
+        "Frequency": 1,
+        "Percentage": 1.67,
+        "Q": "q_9",
+        "Theme": "R"
+      },
+      {
+        "Frequency": 1,
+        "Percentage": 1.67,
+        "Q": "q_9",
+        "Theme": "Wikimedia Commons"
+      }
+    ]
+  },
+  "height": 200,
+  "layer": [
+    {
+      "encoding": {
+        "color": {
+          "field": "Theme",
+          "legend": {
+            "labelLimit": 0
+          },
+          "scale": {
+            "scheme": "tableau20"
+          },
+          "type": "nominal"
+        },
+        "theta": {
+          "field": "Frequency",
+          "stack": true,
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Theme",
+            "title": "Theme",
+            "type": "nominal"
+          },
+          {
+            "field": "Frequency",
+            "title": "Count",
+            "type": "quantitative"
+          },
+          {
+            "field": "Percentage",
+            "format": ".1f",
+            "title": "Percentage",
+            "type": "quantitative"
+          }
+        ]
+      },
+      "mark": {
+        "innerRadius": 60,
+        "outerRadius": 120,
+        "type": "arc"
+      }
+    },
+    {
+      "encoding": {
+        "color": {
+          "field": "Theme",
+          "legend": {
+            "labelLimit": 0
+          },
+          "scale": {
+            "scheme": "tableau20"
+          },
+          "type": "nominal"
+        },
+        "text": {
+          "field": "Percentage_Text",
+          "type": "nominal"
+        },
+        "theta": {
+          "field": "Frequency",
+          "stack": true,
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Theme",
+            "title": "Theme",
+            "type": "nominal"
+          },
+          {
+            "field": "Frequency",
+            "title": "Count",
+            "type": "quantitative"
+          },
+          {
+            "field": "Percentage",
+            "format": ".1f",
+            "title": "Percentage",
+            "type": "quantitative"
+          }
+        ]
+      },
+      "mark": {
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "radius": 150,
+        "type": "text"
+      },
+      "transform": [
+        {
+          "as": "Percentage_Text",
+          "calculate": "datum.Percentage + '%'"
+        }
+      ]
+    }
+  ],
+  "width": 300
+}).catch(console.error);
+                </script>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">How essential do you feel visuals are in achieving your greater goals in your research?</div>
+                <div class="chart-wrapper">
+                    <div id="chart-chart15"></div>
+                </div>
+                <script type="text/javascript">
+                    vegaEmbed('#chart-chart15', {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "config": {
+    "axis": {
+      "labelFont": "Lexend Deca",
+      "titleFont": "Lexend Deca"
+    },
+    "legend": {
+      "labelFont": "Lexend Deca",
+      "labelFontSize": 13,
+      "titleFont": "Lexend Deca",
+      "titleFontSize": 14
+    },
+    "text": {
+      "font": "Lexend Deca"
+    },
+    "title": {
+      "font": "Lexend Deca",
+      "fontSize": 18
+    }
+  },
+  "datasets": {
+    "data-61ad789c537bf23c6c020667dbe3e0ca": [
+      {
+        "Bin": 1,
+        "Frequency": 0,
+        "Max": "Very essential",
+        "Min": "Not essential",
+        "Q": "n_1"
+      },
+      {
+        "Bin": 2,
+        "Frequency": 0,
+        "Max": "Very essential",
+        "Min": "Not essential",
+        "Q": "n_1"
+      },
+      {
+        "Bin": 3,
+        "Frequency": 0,
+        "Max": "Very essential",
+        "Min": "Not essential",
+        "Q": "n_1"
+      },
+      {
+        "Bin": 4,
+        "Frequency": 11,
+        "Max": "Very essential",
+        "Min": "Not essential",
+        "Q": "n_1"
+      },
+      {
+        "Bin": 5,
+        "Frequency": 18,
+        "Max": "Very essential",
+        "Min": "Not essential",
+        "Q": "n_1"
+      }
+    ],
+    "data-634313df7001ee056e53f589b8121dfa": [
+      {
+        "text": "Very essential",
+        "x": 5,
+        "y": 0
+      }
+    ],
+    "data-98722e63201127522071f1580fbcaa23": [
+      {
+        "text": "Not essential",
+        "x": 1,
+        "y": 0
+      }
+    ]
+  },
+  "height": 300,
+  "layer": [
+    {
+      "data": {
+        "name": "data-61ad789c537bf23c6c020667dbe3e0ca"
+      },
+      "encoding": {
+        "color": {
+          "field": "Bin",
+          "legend": null,
+          "scale": {
+            "scheme": "purpleblue"
+          },
+          "type": "ordinal"
+        },
+        "tooltip": [
+          {
+            "field": "Bin",
+            "type": "ordinal"
+          },
+          {
+            "field": "Frequency",
+            "type": "quantitative"
+          }
+        ],
+        "x": {
+          "axis": {
+            "labelAngle": 0
+          },
+          "field": "Bin",
+          "title": "Response Scale",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "Frequency",
+          "title": "Frequency",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "type": "bar"
+      }
+    },
+    {
+      "data": {
+        "name": "data-98722e63201127522071f1580fbcaa23"
+      },
+      "encoding": {
+        "text": {
+          "field": "text",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "x",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "align": "center",
+        "baseline": "top",
+        "dy": 20,
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "type": "text"
+      }
+    },
+    {
+      "data": {
+        "name": "data-634313df7001ee056e53f589b8121dfa"
+      },
+      "encoding": {
+        "text": {
+          "field": "text",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "x",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "align": "center",
+        "baseline": "top",
+        "dy": 20,
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "type": "text"
+      }
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "x": "shared",
+      "y": "shared"
+    }
+  },
+  "width": 250
+}).catch(console.error);
+                </script>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Amongst all the other things you do in your role, how difficult is preparation of research visuals for you?</div>
+                <div class="chart-wrapper">
+                    <div id="chart-chart16"></div>
+                </div>
+                <script type="text/javascript">
+                    vegaEmbed('#chart-chart16', {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "config": {
+    "axis": {
+      "labelFont": "Lexend Deca",
+      "titleFont": "Lexend Deca"
+    },
+    "legend": {
+      "labelFont": "Lexend Deca",
+      "labelFontSize": 13,
+      "titleFont": "Lexend Deca",
+      "titleFontSize": 14
+    },
+    "text": {
+      "font": "Lexend Deca"
+    },
+    "title": {
+      "font": "Lexend Deca",
+      "fontSize": 18
+    }
+  },
+  "datasets": {
+    "data-553745e525800629fca3b27b4c16ce52": [
+      {
+        "Bin": 1,
+        "Frequency": 1,
+        "Max": "Most difficult",
+        "Min": "Least difficult",
+        "Q": "n_2"
+      },
+      {
+        "Bin": 2,
+        "Frequency": 5,
+        "Max": "Most difficult",
+        "Min": "Least difficult",
+        "Q": "n_2"
+      },
+      {
+        "Bin": 3,
+        "Frequency": 14,
+        "Max": "Most difficult",
+        "Min": "Least difficult",
+        "Q": "n_2"
+      },
+      {
+        "Bin": 4,
+        "Frequency": 9,
+        "Max": "Most difficult",
+        "Min": "Least difficult",
+        "Q": "n_2"
+      },
+      {
+        "Bin": 5,
+        "Frequency": 0,
+        "Max": "Most difficult",
+        "Min": "Least difficult",
+        "Q": "n_2"
+      }
+    ],
+    "data-c8d7cbe9c8c61028534a658f55819cee": [
+      {
+        "text": "Most difficult",
+        "x": 5,
+        "y": 0
+      }
+    ],
+    "data-cbcd6ffa3a166fee0537f1a811c14547": [
+      {
+        "text": "Least difficult",
+        "x": 1,
+        "y": 0
+      }
+    ]
+  },
+  "height": 300,
+  "layer": [
+    {
+      "data": {
+        "name": "data-553745e525800629fca3b27b4c16ce52"
+      },
+      "encoding": {
+        "color": {
+          "field": "Bin",
+          "legend": null,
+          "scale": {
+            "scheme": "purpleblue"
+          },
+          "type": "ordinal"
+        },
+        "tooltip": [
+          {
+            "field": "Bin",
+            "type": "ordinal"
+          },
+          {
+            "field": "Frequency",
+            "type": "quantitative"
+          }
+        ],
+        "x": {
+          "axis": {
+            "labelAngle": 0
+          },
+          "field": "Bin",
+          "title": "Response Scale",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "Frequency",
+          "title": "Frequency",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "type": "bar"
+      }
+    },
+    {
+      "data": {
+        "name": "data-cbcd6ffa3a166fee0537f1a811c14547"
+      },
+      "encoding": {
+        "text": {
+          "field": "text",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "x",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "align": "center",
+        "baseline": "top",
+        "dy": 20,
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "type": "text"
+      }
+    },
+    {
+      "data": {
+        "name": "data-c8d7cbe9c8c61028534a658f55819cee"
+      },
+      "encoding": {
+        "text": {
+          "field": "text",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "x",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "align": "center",
+        "baseline": "top",
+        "dy": 20,
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "type": "text"
+      }
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "x": "shared",
+      "y": "shared"
+    }
+  },
+  "width": 250
+}).catch(console.error);
+                </script>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">How enjoyable is learning how to use visualization software and creating your own visualizations for you?</div>
+                <div class="chart-wrapper">
+                    <div id="chart-chart17"></div>
+                </div>
+                <script type="text/javascript">
+                    vegaEmbed('#chart-chart17', {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "config": {
+    "axis": {
+      "labelFont": "Lexend Deca",
+      "titleFont": "Lexend Deca"
+    },
+    "legend": {
+      "labelFont": "Lexend Deca",
+      "labelFontSize": 13,
+      "titleFont": "Lexend Deca",
+      "titleFontSize": 14
+    },
+    "text": {
+      "font": "Lexend Deca"
+    },
+    "title": {
+      "font": "Lexend Deca",
+      "fontSize": 18
+    }
+  },
+  "datasets": {
+    "data-120a7ceab6f2c9af247465c374ed45a7": [
+      {
+        "text": "Very enjoyable",
+        "x": 5,
+        "y": 0
+      }
+    ],
+    "data-1f4b912e067047f60284eb3f990d7fa9": [
+      {
+        "text": "Not enjoyable",
+        "x": 1,
+        "y": 0
+      }
+    ],
+    "data-fd12d7b0f94ff5c95076788a8e6b0c6d": [
+      {
+        "Bin": 1,
+        "Frequency": 2,
+        "Max": "Very enjoyable",
+        "Min": "Not enjoyable",
+        "Q": "n_3"
+      },
+      {
+        "Bin": 2,
+        "Frequency": 6,
+        "Max": "Very enjoyable",
+        "Min": "Not enjoyable",
+        "Q": "n_3"
+      },
+      {
+        "Bin": 3,
+        "Frequency": 7,
+        "Max": "Very enjoyable",
+        "Min": "Not enjoyable",
+        "Q": "n_3"
+      },
+      {
+        "Bin": 4,
+        "Frequency": 6,
+        "Max": "Very enjoyable",
+        "Min": "Not enjoyable",
+        "Q": "n_3"
+      },
+      {
+        "Bin": 5,
+        "Frequency": 8,
+        "Max": "Very enjoyable",
+        "Min": "Not enjoyable",
+        "Q": "n_3"
+      }
+    ]
+  },
+  "height": 300,
+  "layer": [
+    {
+      "data": {
+        "name": "data-fd12d7b0f94ff5c95076788a8e6b0c6d"
+      },
+      "encoding": {
+        "color": {
+          "field": "Bin",
+          "legend": null,
+          "scale": {
+            "scheme": "purpleblue"
+          },
+          "type": "ordinal"
+        },
+        "tooltip": [
+          {
+            "field": "Bin",
+            "type": "ordinal"
+          },
+          {
+            "field": "Frequency",
+            "type": "quantitative"
+          }
+        ],
+        "x": {
+          "axis": {
+            "labelAngle": 0
+          },
+          "field": "Bin",
+          "title": "Response Scale",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "Frequency",
+          "title": "Frequency",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "type": "bar"
+      }
+    },
+    {
+      "data": {
+        "name": "data-1f4b912e067047f60284eb3f990d7fa9"
+      },
+      "encoding": {
+        "text": {
+          "field": "text",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "x",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "align": "center",
+        "baseline": "top",
+        "dy": 20,
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "type": "text"
+      }
+    },
+    {
+      "data": {
+        "name": "data-120a7ceab6f2c9af247465c374ed45a7"
+      },
+      "encoding": {
+        "text": {
+          "field": "text",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "x",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "align": "center",
+        "baseline": "top",
+        "dy": 20,
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "type": "text"
+      }
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "x": "shared",
+      "y": "shared"
+    }
+  },
+  "width": 250
+}).catch(console.error);
+                </script>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">"I would rather make my own visuals than hire someone to make them for me"</div>
+                <div class="chart-wrapper">
+                    <div id="chart-chart18"></div>
+                </div>
+                <script type="text/javascript">
+                    vegaEmbed('#chart-chart18', {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "config": {
+    "axis": {
+      "labelFont": "Lexend Deca",
+      "titleFont": "Lexend Deca"
+    },
+    "legend": {
+      "labelFont": "Lexend Deca",
+      "labelFontSize": 13,
+      "titleFont": "Lexend Deca",
+      "titleFontSize": 14
+    },
+    "text": {
+      "font": "Lexend Deca"
+    },
+    "title": {
+      "font": "Lexend Deca",
+      "fontSize": 18
+    }
+  },
+  "datasets": {
+    "data-06b545cf332ff8245e05dbc687f1b083": [
+      {
+        "Bin": 1,
+        "Frequency": 1,
+        "Max": "Strongly Agree",
+        "Min": "Strongly Disagree",
+        "Q": "n_5"
+      },
+      {
+        "Bin": 2,
+        "Frequency": 4,
+        "Max": "Strongly Agree",
+        "Min": "Strongly Disagree",
+        "Q": "n_5"
+      },
+      {
+        "Bin": 3,
+        "Frequency": 18,
+        "Max": "Strongly Agree",
+        "Min": "Strongly Disagree",
+        "Q": "n_5"
+      },
+      {
+        "Bin": 4,
+        "Frequency": 3,
+        "Max": "Strongly Agree",
+        "Min": "Strongly Disagree",
+        "Q": "n_5"
+      },
+      {
+        "Bin": 5,
+        "Frequency": 3,
+        "Max": "Strongly Agree",
+        "Min": "Strongly Disagree",
+        "Q": "n_5"
+      }
+    ],
+    "data-8f0809a8f3bebb02aeee18e246af51b9": [
+      {
+        "text": "Strongly Disagree",
+        "x": 1,
+        "y": 0
+      }
+    ],
+    "data-e65c8073e6bd65b246c499a1cffeed92": [
+      {
+        "text": "Strongly Agree",
+        "x": 5,
+        "y": 0
+      }
+    ]
+  },
+  "height": 300,
+  "layer": [
+    {
+      "data": {
+        "name": "data-06b545cf332ff8245e05dbc687f1b083"
+      },
+      "encoding": {
+        "color": {
+          "field": "Bin",
+          "legend": null,
+          "scale": {
+            "scheme": "purpleblue"
+          },
+          "type": "ordinal"
+        },
+        "tooltip": [
+          {
+            "field": "Bin",
+            "type": "ordinal"
+          },
+          {
+            "field": "Frequency",
+            "type": "quantitative"
+          }
+        ],
+        "x": {
+          "axis": {
+            "labelAngle": 0
+          },
+          "field": "Bin",
+          "title": "Response Scale",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "Frequency",
+          "title": "Frequency",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "type": "bar"
+      }
+    },
+    {
+      "data": {
+        "name": "data-8f0809a8f3bebb02aeee18e246af51b9"
+      },
+      "encoding": {
+        "text": {
+          "field": "text",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "x",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "align": "center",
+        "baseline": "top",
+        "dy": 20,
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "type": "text"
+      }
+    },
+    {
+      "data": {
+        "name": "data-e65c8073e6bd65b246c499a1cffeed92"
+      },
+      "encoding": {
+        "text": {
+          "field": "text",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "x",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "align": "center",
+        "baseline": "top",
+        "dy": 20,
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "type": "text"
+      }
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "x": "shared",
+      "y": "shared"
+    }
+  },
+  "width": 250
+}).catch(console.error);
+                </script>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">How likely are you to spend money for a custom illustration for your work in the future?</div>
+                <div class="chart-wrapper">
+                    <div id="chart-chart19"></div>
+                </div>
+                <script type="text/javascript">
+                    vegaEmbed('#chart-chart19', {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "config": {
+    "axis": {
+      "labelFont": "Lexend Deca",
+      "titleFont": "Lexend Deca"
+    },
+    "legend": {
+      "labelFont": "Lexend Deca",
+      "labelFontSize": 13,
+      "titleFont": "Lexend Deca",
+      "titleFontSize": 14
+    },
+    "text": {
+      "font": "Lexend Deca"
+    },
+    "title": {
+      "font": "Lexend Deca",
+      "fontSize": 18
+    }
+  },
+  "datasets": {
+    "data-3ad5777d2655366d5cb6f5b274b7e0ae": [
+      {
+        "text": "Very Unlikely",
+        "x": 1,
+        "y": 0
+      }
+    ],
+    "data-598bfc7bf14d71ad712165280dfd8773": [
+      {
+        "text": "Very likely",
+        "x": 5,
+        "y": 0
+      }
+    ],
+    "data-87d02656c3bf88a567f0eb10de690ff3": [
+      {
+        "Bin": 1,
+        "Frequency": 4,
+        "Max": "Very likely",
+        "Min": "Very Unlikely",
+        "Q": "n_6"
+      },
+      {
+        "Bin": 2,
+        "Frequency": 6,
+        "Max": "Very likely",
+        "Min": "Very Unlikely",
+        "Q": "n_6"
+      },
+      {
+        "Bin": 3,
+        "Frequency": 7,
+        "Max": "Very likely",
+        "Min": "Very Unlikely",
+        "Q": "n_6"
+      },
+      {
+        "Bin": 4,
+        "Frequency": 6,
+        "Max": "Very likely",
+        "Min": "Very Unlikely",
+        "Q": "n_6"
+      },
+      {
+        "Bin": 5,
+        "Frequency": 6,
+        "Max": "Very likely",
+        "Min": "Very Unlikely",
+        "Q": "n_6"
+      }
+    ]
+  },
+  "height": 300,
+  "layer": [
+    {
+      "data": {
+        "name": "data-87d02656c3bf88a567f0eb10de690ff3"
+      },
+      "encoding": {
+        "color": {
+          "field": "Bin",
+          "legend": null,
+          "scale": {
+            "scheme": "purpleblue"
+          },
+          "type": "ordinal"
+        },
+        "tooltip": [
+          {
+            "field": "Bin",
+            "type": "ordinal"
+          },
+          {
+            "field": "Frequency",
+            "type": "quantitative"
+          }
+        ],
+        "x": {
+          "axis": {
+            "labelAngle": 0
+          },
+          "field": "Bin",
+          "title": "Response Scale",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "Frequency",
+          "title": "Frequency",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "type": "bar"
+      }
+    },
+    {
+      "data": {
+        "name": "data-3ad5777d2655366d5cb6f5b274b7e0ae"
+      },
+      "encoding": {
+        "text": {
+          "field": "text",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "x",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "align": "center",
+        "baseline": "top",
+        "dy": 20,
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "type": "text"
+      }
+    },
+    {
+      "data": {
+        "name": "data-598bfc7bf14d71ad712165280dfd8773"
+      },
+      "encoding": {
+        "text": {
+          "field": "text",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "x",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "align": "center",
+        "baseline": "top",
+        "dy": 20,
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "type": "text"
+      }
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "x": "shared",
+      "y": "shared"
+    }
+  },
+  "width": 250
+}).catch(console.error);
+                </script>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">How helpful do you think animations/interactive elements would be on your website?</div>
+                <div class="chart-wrapper">
+                    <div id="chart-chart20"></div>
+                </div>
+                <script type="text/javascript">
+                    vegaEmbed('#chart-chart20', {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "config": {
+    "axis": {
+      "labelFont": "Lexend Deca",
+      "titleFont": "Lexend Deca"
+    },
+    "legend": {
+      "labelFont": "Lexend Deca",
+      "labelFontSize": 13,
+      "titleFont": "Lexend Deca",
+      "titleFontSize": 14
+    },
+    "text": {
+      "font": "Lexend Deca"
+    },
+    "title": {
+      "font": "Lexend Deca",
+      "fontSize": 18
+    }
+  },
+  "datasets": {
+    "data-0691005737a04bc6f180bdbf9684edf1": [
+      {
+        "Bin": 1,
+        "Frequency": 1,
+        "Max": "Very helpful",
+        "Min": "Not helpful",
+        "Q": "n_7"
+      },
+      {
+        "Bin": 2,
+        "Frequency": 1,
+        "Max": "Very helpful",
+        "Min": "Not helpful",
+        "Q": "n_7"
+      },
+      {
+        "Bin": 3,
+        "Frequency": 3,
+        "Max": "Very helpful",
+        "Min": "Not helpful",
+        "Q": "n_7"
+      },
+      {
+        "Bin": 4,
+        "Frequency": 11,
+        "Max": "Very helpful",
+        "Min": "Not helpful",
+        "Q": "n_7"
+      },
+      {
+        "Bin": 5,
+        "Frequency": 8,
+        "Max": "Very helpful",
+        "Min": "Not helpful",
+        "Q": "n_7"
+      }
+    ],
+    "data-2b88ea7212af5cecd34237050f9f99df": [
+      {
+        "text": "Very helpful",
+        "x": 5,
+        "y": 0
+      }
+    ],
+    "data-2d6f644d423f49510ea02ed6c5826f66": [
+      {
+        "text": "Not helpful",
+        "x": 1,
+        "y": 0
+      }
+    ]
+  },
+  "height": 300,
+  "layer": [
+    {
+      "data": {
+        "name": "data-0691005737a04bc6f180bdbf9684edf1"
+      },
+      "encoding": {
+        "color": {
+          "field": "Bin",
+          "legend": null,
+          "scale": {
+            "scheme": "purpleblue"
+          },
+          "type": "ordinal"
+        },
+        "tooltip": [
+          {
+            "field": "Bin",
+            "type": "ordinal"
+          },
+          {
+            "field": "Frequency",
+            "type": "quantitative"
+          }
+        ],
+        "x": {
+          "axis": {
+            "labelAngle": 0
+          },
+          "field": "Bin",
+          "title": "Response Scale",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "Frequency",
+          "title": "Frequency",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "type": "bar"
+      }
+    },
+    {
+      "data": {
+        "name": "data-2d6f644d423f49510ea02ed6c5826f66"
+      },
+      "encoding": {
+        "text": {
+          "field": "text",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "x",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "align": "center",
+        "baseline": "top",
+        "dy": 20,
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "type": "text"
+      }
+    },
+    {
+      "data": {
+        "name": "data-2b88ea7212af5cecd34237050f9f99df"
+      },
+      "encoding": {
+        "text": {
+          "field": "text",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "x",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        }
+      },
+      "mark": {
+        "align": "center",
+        "baseline": "top",
+        "dy": 20,
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "type": "text"
+      }
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "x": "shared",
+      "y": "shared"
+    }
+  },
+  "width": 250
+}).catch(console.error);
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
