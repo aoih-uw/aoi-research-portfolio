@@ -12,10 +12,15 @@
             padding: 20px;
             background-color: #f8f9fa;
             line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        * {
+            box-sizing: border-box;
         }
         
         .container {
-            max-width: 1400px;
+            max-width: 1500px;
             margin: 0 auto;
             background-color: white;
             padding: 40px;
@@ -60,7 +65,7 @@
         .charts-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
+            gap: 30px;
             margin-top: 40px;
         }
         
@@ -68,10 +73,12 @@
             background-color: white;
             border: 1px solid #e1e8ed;
             border-radius: 8px;
-            padding: 30px;
+            padding: 20px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             transition: transform 0.2s ease;
-            min-width: 500px;
+            width: 600px;
+            box-sizing: border-box;
+            position: relative;
         }
         
         .chart-container:hover {
@@ -93,24 +100,20 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 100%;
+            min-height: 320px;
         }
         
-        @media (max-width: 768px) {
-            .charts-grid {
-                grid-template-columns: 1fr;
-            }
-            .container {
-                padding: 20px;
-            }
-            .title {
-                font-size: 2em;
-            }
+        .chart-wrapper > div {
+            width: 280px;
+            height: auto;
         }
+        
         
         .header-section {
     margin-bottom: 25px;
 }
-
+        
 .header-section:last-child {
     margin-bottom: 0;
 }
@@ -138,6 +141,59 @@
     color: #2c3e50;
     text-decoration: underline;
 }
+
+        @media (max-width: 800px) {
+            .charts-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .container {
+                padding: 15px 5px;
+                margin: 5px;
+                border-radius: 5px;
+            }
+            
+            .chart-container {
+                width: 100%;
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 15px;
+                box-sizing: border-box;
+            }
+            
+            .title {
+                font-size: 2em;
+            }
+            
+            .description {
+                font-size: 1.1em;
+                padding: 0 10px;
+            }
+            
+            .header {
+                padding-bottom: 20px;
+            }
+        }
+        
+        @media (min-width: 800px) and (max-width: 1024px) {
+            .charts-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+            
+            .container {
+                padding: 25px;
+            }
+            
+            .chart-container {
+                width: 600px;
+                padding: 15px;
+                box-sizing: border-box;
+            }
+        }
+
+        }
 
     </style>
 </head>
