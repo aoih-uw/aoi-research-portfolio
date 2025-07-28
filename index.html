@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aoi Research Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #f8f8f8;
+            color: #333333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        header {
+            display: block;
+            padding: 30px 40px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .logo-space {
+            max-width: 200px;
+            width: auto;
+            height: auto;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: -45px;
+            font-size: 12px;
+            color: #888888;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .logo-image {
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            pointer-events: none;
+            -webkit-user-drag: none;
+            -webkit-touch-callout: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .header-content h1 {
+            font-size: 40px;
+            font-weight: 800;
+            color: #222222;
+            margin-bottom: -10px;
+        }
+
+        .header-content p {
+            font-size:16px;
+            color: #666666;
+        }
+
+        main {
+            padding: 40px;
+        }
+
+        .about-section {
+            background-color: #fafafa;
+            border: 1px solid #dddddd;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+        }
+
+        .about-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #333333;
+            font-weight: 700;
+        }
+
+        .about-content {
+            display: flex;
+            gap: 25px;
+            align-items: flex-start;
+        }
+
+        .about-image {
+            flex-shrink: 0;
+        }
+
+        .about-image .image-placeholder {
+            width: 160px;
+            height: 184px;
+            background-color: #f8f8f8;
+            border: 2px dashed #cccccc;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #888888;
+            text-align: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-section p {
+            margin-bottom: 20px;
+            color: #555555;
+            font-size: 16px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .contact-links a {
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: #ffffff;
+            color: #333333;
+            text-decoration: none;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            font-size: 0.85em;
+        }
+
+        .contact-links a:hover {
+            background-color: #f0f0f0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+            transform: translateY(-1px);
+        }
+
+        .visualizations-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            color: #333333;
+            font-weight: 700;
+        }
+
+        .publications-section {
+            margin-bottom: 40px;
+        }
+
+        .publications-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            color: #333333;
+            font-weight: 700;
+        }
+
+        .publications-list {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .publication-item {
+            padding: 25px;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .publication-item:last-child {
+            border-bottom: none;
+        }
+
+        .publication-item:hover {
+            background-color: #fafafa;
+        }
+
+        .publication-content {
+            flex: 1;
+        }
+
+        .publication-image {
+            flex-shrink: 0;
+        }
+
+        .publication-image .image-placeholder {
+            width: 200px;
+            height: 133px;
+            background-color: #f8f8f8;
+            border: 2px dashed #cccccc;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            color: #888888;
+            text-align: center;
+        }
+
+        .publication-image img {
+            width: 200px;
+            height: 133px;
+            object-fit: cover;
+            border-radius: 8px;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            pointer-events: none;
+            -webkit-user-drag: none;
+            -webkit-touch-callout: none;
+            background: none;
+            border: 1px solid #dddddd;
+        }
+
+        .publication-item h3 {
+            margin-bottom: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        .publication-item h3 a {
+            color: #333333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .publication-item h3 a:hover {
+            color: #000000;
+            text-decoration: underline;
+        }
+
+        .publication-authors {
+            color: #666666;
+            font-size: 0.95em;
+            margin-bottom: 5px;
+        }
+
+        .publication-venue {
+            color: #555555;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .publication-description {
+            color: #666666;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .poster-link {
+            margin-top: 8px;
+        }
+
+        .poster-link a {
+            color: #333333;
+            text-decoration: none;
+            font-size: 0.85em;
+            font-weight: 500;
+            padding: 4px 8px;
+            background-color: #f8f8f8;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .poster-link a:hover {
+            background-color: #f0f0f0;
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .research-skills-section {
+            margin-bottom: 40px;
+        }
+
+        .research-skills-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            color: #333333;
+            font-weight: 700;
+        }
+
+        .research-skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .research-skill-item {
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+
+        .research-skill-item:hover {
+            background-color: #fafafa;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .research-skill-item h3 {
+            font-size: 1.1em;
+            font-weight: 500;
+            color: #333333;
+            margin-bottom: 8px;
+        }
+
+        .research-skill-item p {
+            color: #666666;
+            font-size: 0.9em;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .research-skill-item a {
+            color: #333333;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .research-skill-item a:hover {
+            color: #000000;
+            text-decoration: underline;
+        }
+
+        .viz-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .viz-table th {
+            background-color: #f8f8f8;
+            padding: 15px 20px;
+            text-align: left;
+            font-weight: 500;
+            color: #333333;
+            border-bottom: 2px solid #eeeeee;
+        }
+
+        .viz-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .viz-table tr:hover {
+            background-color: #fafafa;
+        }
+
+        .viz-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .viz-table a {
+            color: #333333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .viz-table a:hover {
+            color: #000000;
+            text-decoration: underline;
+        }
+
+        .description {
+            color: #666666;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        footer {
+            padding: 30px;
+            border-top: 2px solid #f0f0f0;
+            color: #888888;
+            font-size: 0.9em;
+        }
+
+        /* Tablet styles */
+        @media (max-width: 1024px) {
+            .container {
+                margin: 15px;
+            }
+
+            header {
+                padding: 25px 30px;
+            }
+
+            main {
+                padding: 30px;
+            }
+
+            .about-section {
+                padding: 25px;
+            }
+
+            .header-content h1 {
+                font-size: 2.2em;
+            }
+        }
+
+        /* Small tablet and large phone styles */
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+
+            header {
+                padding: 20px;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            .about-section {
+                padding: 20px;
+            }
+
+            .about-content {
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+            }
+
+            .about-image .image-placeholder {
+                width: 120px;
+                height: 138px;
+            }
+
+            .header-content h1 {
+                font-size: 2em;
+            }
+
+            .contact-links {
+                gap: 10px;
+            }
+
+            .viz-table {
+                font-size: 0.9em;
+            }
+
+            .viz-table th,
+            .viz-table td {
+                padding: 12px 10px;
+            }
+        }
+
+        /* Small smartphone styles */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+
+            header {
+                padding: 15px;
+            }
+
+            main {
+                padding: 15px;
+            }
+
+            .about-section {
+                padding: 15px;
+            }
+
+            .header-content h1 {
+                font-size: 1.8em;
+            }
+
+            .header-content p {
+                font-size: 1em;
+            }
+
+            .about-section h2,
+            .visualizations-section h2,
+            .publications-section h2,
+            .research-skills-section h2 {
+                font-size: 1.5em;
+            }
+
+            .research-skills-list {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .research-skill-item {
+                padding: 15px;
+            }
+
+            .research-skill-item h3 {
+                font-size: 1em;
+            }
+
+            .publication-item {
+                padding: 15px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .publication-image .image-placeholder {
+                width: 100%;
+                height: 60px;
+                font-size: 10px;
+            }
+
+            .publication-image img {
+                width: 100%;
+                height: 60px;
+            }
+
+            .publication-item h3 {
+                font-size: 1em;
+            }
+
+            .contact-links {
+                gap: 8px;
+            }
+
+            .contact-links a {
+                padding: 5px 10px;
+                font-size: 0.8em;
+            }
+
+            .viz-table {
+                font-size: 0.8em;
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            .viz-table thead,
+            .viz-table tbody,
+            .viz-table th,
+            .viz-table td,
+            .viz-table tr {
+                display: block;
+            }
+
+            .viz-table thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            .viz-table tr {
+                border: 1px solid #ccc;
+                margin-bottom: 10px;
+                padding: 10px;
+                border-radius: 4px;
+                background-color: #fafafa;
+                white-space: normal;
+            }
+
+            .viz-table td {
+                border: none;
+                padding: 5px 0;
+                position: relative;
+                padding-left: 25%;
+            }
+
+            .viz-table td:before {
+                content: attr(data-label) ": ";
+                position: absolute;
+                left: 6px;
+                width: 20%;
+                font-weight: bold;
+                color: #333;
+            }
+
+            footer {
+                padding: 20px 15px;
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-space">
+                <img src="giphy.gif" alt="joojaebum gif" class="logo-image" draggable="false" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
+            </div>
+            <div class="header-content">
+                <h1>Aoi Hunsaker's Research Portfolio</h1>
+                <p>A comparative auditory neuroscientist with a knack for 3D modeling and illustration</p>
+                <p style="font-size: 8px;">gif credit: <a href="https://giphy.com/stickers/montereybayaquarium-monterey-bay-aquarium-FlMCeBNPU6BbskeBiK" target="_blank">Monterey Bay Aquarium</a></p>
+            </div>
+        </header>
+
+        <main>
+            <section class="about-section">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="profilePhoto.jpg" alt="Aoi" style="width: 200px; object-fit: cover; border: 2px solid #cccccc; border-radius: 8px; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; pointer-events: none; -webkit-user-drag: none; -webkit-touch-callout: none;" draggable="false" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
+                    </div>
+                    <div class="about-text">
+                        <p>I am a PhD student in the Neural Systems and Behavior program within the Psychology department at the University of Washington, where my research focuses on comparative auditory neuroscience.</p>
+                        
+                        <div class="contact-links">
+                            <a href="mailto:your.aoih@uw.edu">UW Email</a>
+                            <a href="https://scholar.google.com/citations?user=-lqfXd0AAAAJ&hl=en" target="_blank">Google Scholar</a>
+                            <a href="https://www.linkedin.com/in/aoihunsaker/" target="_blank">LinkedIn</a>
+                            <a href="https://orcid.org/0009-0002-4064-9042" target="_blank">ORCID</a>
+                            <a href="https://github.com/aoih-uw" target="_blank">GitHub</a>
+                            <a href="https://zukanstudio.com" target="_blank">Sci. Illustration Company</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="publications-section">
+                <h2>Recent Publications and Presentations</h2>
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <div class="publication-content">
+                            <h3>Publication</h3>
+                            <h3><a href="https://www.tandfonline.com/doi/pdf/10.1080/14992027.2025.2465767" target="_blank">Towards improved measurements of bone conduction auditory brainstem responses in infants and adults: mitigation of stimulus artefact</a></h3>
+                            <p class="publication-authors">Aoi A. Hunsaker, Kristin M. Uhler, Kerry A. Walker, Nathaniel T. Greene, Andrew D. Brown</p>
+                            <p class="publication-venue"><em>International Journal of Audiology</em>, 2025</p>
+                            <p class="publication-description">Investigation of the impact of applying electromagnetic shielding on a bone conduction transducer when used in auditory brainstem response (ABR) measurments.</p>
+                        </div>
+                        <div class="publication-image">
+                            <div class="image-placeholder">
+                                <img src="BCABRimg.jpg" alt="BC ABR image" class="publication-image" draggable="false" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="publication-item">
+                        <div class="publication-content">
+                            <h3>Conference Presentation </h3>
+                            <h3> Novel auditory threshold measurements in a Chimera species, spotted ratfish <em>(Hydrolagus colliei)</em> using adaptive Auditory Evoked Potential (AEP) Technique</h3>
+                            <p class="publication-authors">Aoi A. Hunsaker, Andrew D. Brown, David R. Dall'Osto, Peter H. Dahl, Joseph A. Sisneros</p>
+                            <p class="publication-venue"><em>The Effects of Noise on Aquatic Life</em>, 2025</p>
+                            <p class="publication-description">Novel auditory response measurements in a holocephalan species using an adaptive AEP recording method.</p>
+                            <p class="poster-link"><a href="ENAL_2025_Poster_Final.pdf" target="_blank">Conference Poster</a></p>
+                        </div>
+                        <div class="publication-image">
+                            <div class="image-placeholder">
+                                <img src="ENAL_2025_Poster.png" alt="ENAL 2025 image" class="publication-image" draggable="false" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="publication-item">
+                        <div class="publication-content">
+                            <h3>Conference Presentation </h3>
+                            <h3>ACBC: Sound source localiation during the use of a bone conduction headset </h3>
+                            <p class="publication-authors">Aoi A. Hunsaker, Theodore F. Argo IV, Andrew D. Brown</p>
+                            <p class="publication-venue"><em>Association for Research in Otolaryngology</em>, 2025</p>
+                            <p class="publication-description">Investigation on the impact on binaural auditory cues during simultaneous air and bone conduction stimulation</p>
+                            <p class="poster-link"><a href="ARO_2025_Poster_Final.pdf" target="_blank">Conference Poster</a></p>
+                        </div>
+                        <div class="publication-image">
+                            <div class="image-placeholder">
+                                <img src="ARO_2025_Poster.png" alt="ARO 2025 image" class="publication-image" draggable="false" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="research-skills-section">
+                <h2>Research Skills</h2>
+                <div class="research-skills-list">
+                    <div class="research-skill-item">
+                        <h3>Extracellular Electrophysiology</h3>
+                        <p>Recording and analysis of neural population activity in non-model organisms (e.g., <em>Hydrolagus colliei</em>, <em>Porichthys notatus</em>)</p>
+                    </div>
+                    
+                    <div class="research-skill-item">
+                        <h3>Experimental Software Design</h3>
+                        <p>Developed a statistics-based adaptive Auditory Evoked Potential (AEP) acquisition system. Programming languages: MATLAB and Python.</p>
+                    </div>
+                    
+                    <div class="research-skill-item">
+                        <h3>Experimental Hardware Design</h3>
+                        <p>Designed and prototyped a head-tracking headband. Created Arduino-based sensor systems.</p>
+                    </div>
+                    
+                    <div class="research-skill-item">
+                        <h3>3D Modeling and Printing</h3>
+                        <p>Experience with CAD and mesh-based modeling using Autodesk Fusion 360 and Blender; fabrication via 3D printing.</p>
+                    </div>
+                    
+                    <div class="research-skill-item">
+                        <h3>Scientific Illustration</h3>
+                        <p>Created detailed illustrations of model organisms and experimental paradigms. Tools: Adobe Illustrator and Photoshop. For commissions, see <a href="#" target="_blank">Zukan Studio</a>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="visualizations-section">
+                <h2>Data Visualizations</h2>
+                <table class="viz-table">
+                    <thead>
+                        <tr>
+                            <th>Visualization</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Visualization">
+                                <a href="sci_vis_survey_page.html">Scientific Visualization Survey</a>
+                                <div class="description">July 2025</div>
+                            </td>
+                            <td data-label="Description">Survey results amongst researchers regarding how they value and make scientific visuals</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Visualization">
+                                <a href="https://finding-the-aep-579c09.pages.cs.washington.edu/">Fish Auditory Response Visualization</a>
+                                <div class="description">June 2025</div>
+                            </td>
+                            <td data-label="Description">Interactive and animated visualizations of fish auditory responses.</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Visualization">
+                                <a href="https://auditory-brain-response-interactive-visualization-726123.pages.cs.washington.edu/">Signal Averaging Demonstration</a>
+                                <div class="description">May 2025</div>
+                            </td>
+                            <td data-label="Description">Interactive visualizations demonstrating the power of signal averaging in electrophysiology</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Aoi Hunsaker. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
