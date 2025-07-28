@@ -1,2 +1,2 @@
-# aoiDataSites
-https://aoih-uw.github.io/sci-vis-results
+# aoi-dataviz
+https://aoih-uw.github.io/dataviz
