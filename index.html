@@ -183,11 +183,19 @@
             font-weight: 700;
         }
 
-        .slides-section video {
+        .slides-section video,
+        .slides-section img {
             width: 100%;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             display: block;
+        }
+
+        .slides-caption {
+            font-size: 0.8em;
+            color: #888888;
+            font-style: italic;
+            margin-top: 8px;
         }
 
         .publications-section {
@@ -737,8 +745,9 @@
             </section>
 
             <section class="slides-section">
-                <h2>Latest Presentation on Auditory Evoked Potential Work</h2>
-                <video src="antg_slides_2026.mp4" autoplay loop muted playsinline controls></video>
+                <h2>Featured Scientific Illustration</h2>
+                <img src="scientific_illust_ex.png" alt="Scientific illustration commission" draggable="false" oncontextmenu="return false;">
+                <p class="slides-caption">Illustrated by Aoi Hunsaker. This was a commission for Dr. Michelle Basso</p>
             </section>
 
             <section class="publications-section">
@@ -849,7 +858,6 @@
                             <span class="skill-tag">Adobe Illustrator</span>
                             <span class="skill-tag">Photoshop</span>
                         </div>
-                        <img src="scientific_illust_ex.png" alt="Scientific illustration example" class="skill-example" draggable="false" oncontextmenu="return false;">
                     </div>
 
                     <div class="research-skill-item">
