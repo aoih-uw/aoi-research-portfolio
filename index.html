@@ -172,6 +172,24 @@
             font-weight: 700;
         }
 
+        .slides-section {
+            margin-bottom: 40px;
+        }
+
+        .slides-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            color: #333333;
+            font-weight: 700;
+        }
+
+        .slides-section video {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            display: block;
+        }
+
         .publications-section {
             margin-bottom: 40px;
         }
@@ -333,11 +351,35 @@
             transform: translateY(-2px);
         }
 
+        .skill-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .skill-icon {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555555;
+        }
+
+        .skill-icon svg {
+            width: 22px;
+            height: 22px;
+        }
+
         .research-skill-item h3 {
             font-size: 1.1em;
             font-weight: 500;
             color: #333333;
-            margin-bottom: 8px;
+            margin: 0;
         }
 
         .research-skill-item p {
@@ -356,6 +398,34 @@
         .research-skill-item a:hover {
             color: #000000;
             text-decoration: underline;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 12px;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            background-color: #f0f0f0;
+            color: #555555;
+            font-size: 0.75em;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+
+        .skill-example {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-top: 12px;
+            display: block;
+            user-select: none;
+            pointer-events: none;
         }
 
         .viz-table {
@@ -522,7 +592,8 @@
             .about-section h2,
             .visualizations-section h2,
             .publications-section h2,
-            .research-skills-section h2 {
+            .research-skills-section h2,
+            .slides-section h2 {
                 font-size: 1.5em;
             }
 
@@ -665,9 +736,57 @@
                 </div>
             </section>
 
+            <section class="slides-section">
+                <h2>Latest Presentation on Auditory Evoked Potential Work</h2>
+                <video src="antg_slides_2026.mp4" autoplay loop muted playsinline controls></video>
+            </section>
+
             <section class="publications-section">
                 <h2 class="publications-title">Recent Publications and Presentations</h2>
                 <div class="publications-list">
+                    <div class="publication-item">
+                        <div class="publication-content">
+                            <h3>Publication</h3>
+                            <h3>Two-dimensional sound localization during hearing protector use: Human performance and acoustic prediction</h3>
+                            <p class="publication-authors">Daniel J. Audet, Aoi A. Hunsaker, Madelyn A. Butler, Carol A. Sammeth, Allison Podolski, Theodore F. Argo IV, David A. Anderson, Nathaniel T. Greene, Andrew D. Brown</p>
+                            <p class="publication-venue"><em>The Journal of the Acoustical Society of America</em>, 159(4), 3130–3147, 2026</p>
+                            <p class="poster-link"><a href="https://pubs.aip.org/asa/jasa/article/159/4/3130/3386732" target="_blank">Link to paper</a></p>
+                        </div>
+                        <div class="publication-image">
+                            <div class="image-placeholder">
+                                <img src="2d_sl_img.png" alt="2d sl image" class="publication-image" draggable="false" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item">
+                        <div class="publication-content">
+                            <h3>Publication</h3>
+                            <h3>Auditory evoked potentials in aquatic animals: A review of threshold determination methods</h3>
+                            <p class="publication-authors">Aoi A. Hunsaker, Joseph A. Sisneros, Andrew D. Brown</p>
+                            <p class="publication-venue"> A. N. Popper, J. A. Sisneros, P. Lepper, & K. J. Vigness-Raposa (Eds.), <em>The Effects of Noise on Aquatic Life IV</em>, Springer Nature (In press)</p>
+                        </div>
+                        <div class="publication-image">
+                            <div class="image-placeholder">
+                                <img src="enal_chapter_img.png" alt="enal image" class="publication-image" draggable="false" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item">
+                        <div class="publication-content">
+                            <h3>Podium Presentation</h3>
+                            <h3>Novel auditory evoked potential recordings in a holocephalan species, the spotted ratfish <em>(Hydrolagus colliei)</em></h3>
+                            <p class="publication-authors">Aoi A. Hunsaker, Andrew D. Brown, Joseph A. Sisneros</p>
+                            <p class="publication-venue"><em>188th Meeting of the Acoustical Society of America</em>, Honolulu, HI, 2025</p>
+                        </div>
+                        <div class="publication-image">
+                            <div class="image-placeholder">
+                                <img src="ratfish.png" alt="Chimera image" class="publication-image" draggable="false" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="publication-item">
                         <div class="publication-content">
                             <h3>Publication</h3>
@@ -685,12 +804,11 @@
                     
                     <div class="publication-item">
                         <div class="publication-content">
-                            <h3>Conference Presentation </h3>
+                            <h3>Lighting Talk and Poster</h3>
                             <h3> Novel auditory threshold measurements in a Chimera species, spotted ratfish <em>(Hydrolagus colliei)</em> using adaptive Auditory Evoked Potential (AEP) Technique</h3>
                             <p class="publication-authors">Aoi A. Hunsaker, Andrew D. Brown, David R. Dall'Osto, Peter H. Dahl, Joseph A. Sisneros</p>
                             <p class="publication-venue"><em>The Effects of Noise on Aquatic Life</em>, 2025</p>
                             <p class="publication-description">Novel auditory response measurements in a holocephalan species using an adaptive AEP recording method.</p>
-                            <p class="poster-link"><a href="ENAL_2025_Poster_Final.pdf" target="_blank">Conference Poster</a></p>
                         </div>
                         <div class="publication-image">
                             <div class="image-placeholder">
@@ -701,12 +819,11 @@
                     
                     <div class="publication-item">
                         <div class="publication-content">
-                            <h3>Conference Presentation </h3>
+                            <h3>Poster Presentation</h3>
                             <h3>ACBC: Sound source localiation during the use of a bone conduction headset </h3>
                             <p class="publication-authors">Aoi A. Hunsaker, Theodore F. Argo IV, Andrew D. Brown</p>
                             <p class="publication-venue"><em>Association for Research in Otolaryngology</em>, 2025</p>
                             <p class="publication-description">Investigation on the impact on binaural auditory cues during simultaneous air and bone conduction stimulation</p>
-                            <p class="poster-link"><a href="ARO_2025_Poster_Final.pdf" target="_blank">Conference Poster</a></p>
                         </div>
                         <div class="publication-image">
                             <div class="image-placeholder">
@@ -721,28 +838,77 @@
                 <h2>Research Skills</h2>
                 <div class="research-skills-list">
                     <div class="research-skill-item">
-                        <h3>Extracellular Electrophysiology</h3>
-                        <p>Recording and analysis of neural population activity in non-model organisms (e.g., <em>Hydrolagus colliei</em>, <em>Porichthys notatus</em>)</p>
+                        <div class="skill-header">
+                            <div class="skill-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+                            </div>
+                            <h3>Scientific Illustration</h3>
+                        </div>
+                        <p>Created detailed illustrations of model organisms and experimental paradigms. For commissions, see <a href="https://zukanstudio.com" target="_blank">Zukan Studio</a>.</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Adobe Illustrator</span>
+                            <span class="skill-tag">Photoshop</span>
+                        </div>
+                        <img src="scientific_illust_ex.png" alt="Scientific illustration example" class="skill-example" draggable="false" oncontextmenu="return false;">
+                    </div>
+
+                    <div class="research-skill-item">
+                        <div class="skill-header">
+                            <div class="skill-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                            </div>
+                            <h3>Extracellular Electrophysiology</h3>
+                        </div>
+                        <p>Recording and analysis of neural population activity across diverse organisms (e.g., <em>Hydrolagus colliei</em>, <em>Porichthys notatus</em>).</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">In vivo</span>
+                            <span class="skill-tag">Neural recording</span>
+                            <span class="skill-tag">AEP</span>
+                        </div>
                     </div>
                     
                     <div class="research-skill-item">
-                        <h3>Experimental Software Design</h3>
-                        <p>Developed a statistics-based adaptive Auditory Evoked Potential (AEP) acquisition system. Programming languages: MATLAB and Python.</p>
+                        <div class="skill-header">
+                            <div class="skill-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                            </div>
+                            <h3>Software Design</h3>
+                        </div>
+                        <p>Developed a statistics-based adaptive Auditory Evoked Potential (AEP) acquisition system.</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">MATLAB</span>
+                            <span class="skill-tag">Python</span>
+                        </div>
                     </div>
                     
                     <div class="research-skill-item">
-                        <h3>Experimental Hardware Design</h3>
-                        <p>Designed and prototyped a head-tracking headband. Created Arduino-based sensor systems.</p>
+                        <div class="skill-header">
+                            <div class="skill-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+                            </div>
+                            <h3>Hardware Design</h3>
+                        </div>
+                        <p>Designed and prototyped a head-tracking headband and Arduino-based sensor systems.</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Arduino</span>
+                            <span class="skill-tag">Sensors</span>
+                            <span class="skill-tag">Prototyping</span>
+                        </div>
                     </div>
                     
                     <div class="research-skill-item">
-                        <h3>3D Modeling and Printing</h3>
-                        <p>Experience with CAD and mesh-based modeling using Autodesk Fusion 360 and Blender; fabrication via 3D printing.</p>
-                    </div>
-                    
-                    <div class="research-skill-item">
-                        <h3>Scientific Illustration</h3>
-                        <p>Created detailed illustrations of model organisms and experimental paradigms. Tools: Adobe Illustrator and Photoshop. For commissions, see <a href="#" target="_blank">Zukan Studio</a>.</p>
+                        <div class="skill-header">
+                            <div class="skill-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                            </div>
+                            <h3>3D Modeling and Printing</h3>
+                        </div>
+                        <p>Experience with CAD and mesh-based modeling; fabrication via 3D printing.</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Fusion 360</span>
+                            <span class="skill-tag">Blender</span>
+                            <span class="skill-tag">3D Printing</span>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -784,7 +950,7 @@
         </main>
 
         <footer>
-            <p>&copy; 2025 Aoi Hunsaker. All rights reserved.</p>
+            <p>&copy; 2026 Aoi Hunsaker. All rights reserved.</p>
         </footer>
     </div>
 </body>
