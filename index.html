@@ -193,6 +193,14 @@
             position: relative;
         }
 
+        .slides-caption {
+            font-size: 0.8em;
+            color: #888888;
+            font-style: italic;
+            margin-top: 8px;
+            margin-bottom: 40px;
+        }
+
         .gallery-strip {
             display: flex;
             overflow-x: auto;
@@ -205,15 +213,16 @@
         }
 
         .gallery-strip img {
-            flex: 0 0 100%;
-            scroll-snap-align: center;
-            height: 340px;
-            object-fit: cover;
-            border-radius: 8px;
-            display: block;
-            user-select: none;
-            pointer-events: none;
-        }
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    height: 340px;
+    object-fit: contain;
+    background-color: #fafafa;
+    border-radius: 8px;
+    display: block;
+    user-select: none;
+    pointer-events: none;
+}
 
         .car-btn {
             position: absolute;
@@ -812,6 +821,7 @@
             <button class="car-btn prev" onclick="strip.scrollBy({left: -strip.clientWidth, behavior: 'smooth'})">&#8249;</button>
             <button class="car-btn next" onclick="strip.scrollBy({left: strip.clientWidth, behavior: 'smooth'})">&#8250;</button>
         </div>
+        <p class="slides-caption">Illustrated by Aoi Hunsaker. Do not use without permission.</p>
 
             <section class="about-section">
                 <h2>About Me</h2>
