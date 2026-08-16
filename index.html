@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aoi Research Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,11 +13,15 @@
         }
 
         body {
-            font-family: system-ui, -apple-system, sans-serif;
-            background-color: #f8f8f8;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #d4deeb;
             color: #333333;
             line-height: 1.6;
             padding: 20px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Space Grotesk', system-ui, sans-serif;
         }
 
         .container {
@@ -76,9 +80,8 @@
         }
 
         .header-content h1 {
-            font-family: 'Bricolage Grotesque', system-ui, sans-serif;
             font-size: 40px;
-            font-weight: 800;
+            font-weight: 700;
             line-height: 1.05;
             color: #222222;
             margin-bottom: -10px;
@@ -186,12 +189,20 @@
             font-weight: 700;
         }
 
-        .slides-section video,
-        .slides-section img {
+        .gallery-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .gallery-strip img {
             width: 100%;
+            height: 170px;
+            object-fit: cover;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             display: block;
+            user-select: none;
+            pointer-events: none;
         }
 
         .slides-caption {
@@ -276,7 +287,7 @@
         .publication-item h3 {
             margin-bottom: 8px;
             font-size: 1.1em;
-            font-weight: bold;
+            font-weight: 600;
         }
 
         .publication-item h3 a {
@@ -328,6 +339,32 @@
             background-color: #f0f0f0;
             color: #000000;
             text-decoration: none;
+        }
+
+        .talks-section {
+            margin-bottom: 40px;
+        }
+
+        .talks-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            color: #333333;
+            font-weight: 700;
+        }
+
+        .talk-venues {
+            color: #555555;
+            font-size: 0.9em;
+            margin: 8px 0 0 18px;
+        }
+
+        .talk-photo img {
+            width: 240px;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #dddddd;
+            user-select: none;
+            pointer-events: none;
         }
 
         .research-skills-section {
@@ -557,6 +594,14 @@
                 gap: 10px;
             }
 
+            .gallery-strip {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-strip img {
+                height: 140px;
+            }
+
             .viz-table {
                 font-size: 0.9em;
             }
@@ -603,6 +648,7 @@
             .about-section h2,
             .visualizations-section h2,
             .publications-section h2,
+            .talks-section h2,
             .research-skills-section h2,
             .slides-section h2 {
                 font-size: 1.5em;
@@ -641,6 +687,10 @@
             .publication-image img {
                 width: 100%;
                 height: 150px;
+            }
+
+            .talk-photo img {
+                width: 100%;
             }
 
             .publication-item h3 {
@@ -727,9 +777,12 @@
         <main>
 
             <section class="slides-section">
-                <img src="chapterillusts-03.png" alt="Scientific illustration commission" draggable="false" oncontextmenu="return false;">
-                <p class="slides-caption">Illustrated by Aoi Hunsaker. Do not use without permission.</p>
-            <img src="comparative_brains.PNG" alt="Scientific illustration commission" draggable="false" oncontextmenu="return false;">
+                <div class="gallery-strip">
+                    <img src="chapterillusts-03.png" alt="Scientific illustration commission" draggable="false" oncontextmenu="return false;">
+                    <img src="comparative_brains.PNG" alt="Comparative brain illustration" draggable="false" oncontextmenu="return false;">
+                    <img src="outdooraep.png" alt="In-field AEP recording setup" draggable="false" oncontextmenu="return false;">
+                    <img src="GUI_preview.png" alt="Adaptive AEP software interface" draggable="false" oncontextmenu="return false;">
+                </div>
                 <p class="slides-caption">Illustrated by Aoi Hunsaker. Do not use without permission.</p>
             </section>
 
@@ -740,7 +793,9 @@
                         <img src="lab_shot.jpeg" alt="Aoi" style="width: 200px; object-fit: cover; border: 2px solid #cccccc; border-radius: 8px; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; pointer-events: none; -webkit-user-drag: none; -webkit-touch-callout: none;" draggable="false" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
                     </div>
                     <div class="about-text">
-                        <p>I am a PhD student in the Neural Systems and Behavior program within the Psychology department at the University of Washington, where my research focuses on comparative auditory neuroscience.</p>
+                        <p>I am a PhD student in the Neural Systems and Behavior program within the Psychology department at the University of Washington, where I study what and how animals across the animal kingdom hear.</p>
+
+                        <p>I serve on the Student Council of the Acoustical Society of America.</p>
                         
                         <div class="contact-links">
                             <a href="Hunsaker_resume_May_2026.pdf" target="_blank">CV</a>
@@ -750,35 +805,23 @@
                             <a href="https://orcid.org/0009-0002-4064-9042" target="_blank">ORCID</a>
                             <a href="https://github.com/aoih-uw" target="_blank">GitHub</a>
                             <a href="https://zukanstudio.com" target="_blank">Sci. Illustration Company</a>
+                            <a href="personal_art_portfolio.html">Personal art portfolio</a>
                         </div>
                     </div>
                 </div>
             </section>
 
             <section class="publications-section">
-                <h2 class="publications-title">Recent Publications and Presentations</h2>
+                <h2 class="publications-title">Featured Publications and Presentations</h2>
                 <div class="publications-list">
-                    <div class="publication-item">
-                        <div class="publication-content">
-                            <h3>Publication</h3>
-                            <h3>Two-dimensional sound localization during hearing protector use: Human performance and acoustic prediction</h3>
-                            <p class="publication-authors">Daniel J. Audet, Aoi A. Hunsaker, Madelyn A. Butler, Carol A. Sammeth, Allison Podolski, Theodore F. Argo IV, David A. Anderson, Nathaniel T. Greene, Andrew D. Brown</p>
-                            <p class="publication-venue"><em>The Journal of the Acoustical Society of America</em>, 159(4), 3130–3147, 2026</p>
-                            <p class="poster-link"><a href="https://pubs.aip.org/asa/jasa/article/159/4/3130/3386732" target="_blank">Link to paper</a></p>
-                        </div>
-                        <div class="publication-image">
-                            <div class="image-placeholder">
-                                <img src="2d_sl_img.png" alt="2d sl image" class="publication-image" draggable="false" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="publication-item">
                         <div class="publication-content">
                             <h3>Publication</h3>
                             <h3>Auditory evoked potentials in aquatic animals: A review of threshold determination methods</h3>
                             <p class="publication-authors">Aoi A. Hunsaker, Joseph A. Sisneros, Andrew D. Brown</p>
                             <p class="publication-venue"> A. N. Popper, J. A. Sisneros, P. Lepper, & K. J. Vigness-Raposa (Eds.), <em>The Effects of Noise on Aquatic Life IV</em>, Springer Nature (In press)</p>
+                            <p class="poster-link"><a href="https://link-springer-com.offcampus.lib.washington.edu/rwe/10.1007/978-3-031-94229-7_184-1" target="_blank">Link to paper</a></p>
+
                         </div>
                         <div class="publication-image">
                             <div class="image-placeholder">
@@ -803,22 +846,7 @@
 
                     <div class="publication-item">
                         <div class="publication-content">
-                            <h3>Publication</h3>
-                            <h3><a href="https://www.tandfonline.com/doi/pdf/10.1080/14992027.2025.2465767" target="_blank">Towards improved measurements of bone conduction auditory brainstem responses in infants and adults: mitigation of stimulus artefact</a></h3>
-                            <p class="publication-authors">Aoi A. Hunsaker, Kristin M. Uhler, Kerry A. Walker, Nathaniel T. Greene, Andrew D. Brown</p>
-                            <p class="publication-venue"><em>International Journal of Audiology</em>, 2025</p>
-                            <p class="publication-description">Investigation of the impact of applying electromagnetic shielding on a bone conduction transducer when used in auditory brainstem response (ABR) measurments.</p>
-                        </div>
-                        <div class="publication-image">
-                            <div class="image-placeholder">
-                                <img src="BCABRimg.jpg" alt="BC ABR image" class="publication-image" draggable="false" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="publication-item">
-                        <div class="publication-content">
-                            <h3>Lightning Talk and Poster</h3>
+                            <h3>Lighting Talk and Poster</h3>
                             <h3> Novel auditory threshold measurements in a Chimera species, spotted ratfish <em>(Hydrolagus colliei)</em> using adaptive Auditory Evoked Potential (AEP) Technique</h3>
                             <p class="publication-authors">Aoi A. Hunsaker, Andrew D. Brown, David R. Dall'Osto, Peter H. Dahl, Joseph A. Sisneros</p>
                             <p class="publication-venue"><em>The Effects of Noise on Aquatic Life</em>, 2025</p>
@@ -833,16 +861,50 @@
                     
                     <div class="publication-item">
                         <div class="publication-content">
-                            <h3>Poster Presentation</h3>
-                            <h3>ACBC: Sound source localization during the use of a bone conduction headset </h3>
-                            <p class="publication-authors">Aoi A. Hunsaker, Theodore F. Argo IV, Andrew D. Brown</p>
-                            <p class="publication-venue"><em>Association for Research in Otolaryngology</em>, 2025</p>
-                            <p class="publication-description">Investigation on the impact on binaural auditory cues during simultaneous air and bone conduction stimulation</p>
+                            <h3>Publication</h3>
+                            <h3>Two-dimensional sound localization during hearing protector use: Human performance and acoustic prediction</h3>
+                            <p class="publication-authors">Daniel J. Audet, Aoi A. Hunsaker, Madelyn A. Butler, Carol A. Sammeth, Allison Podolski, Theodore F. Argo IV, David A. Anderson, Nathaniel T. Greene, Andrew D. Brown</p>
+                            <p class="publication-venue"><em>The Journal of the Acoustical Society of America</em>, 159(4), 3130–3147, 2026</p>
+                            <p class="poster-link"><a href="https://pubs.aip.org/asa/jasa/article/159/4/3130/3386732" target="blank">Link to paper</a></p>
                         </div>
                         <div class="publication-image">
                             <div class="image-placeholder">
-                                <img src="ARO_2025_Poster.PNG" alt="ARO 2025 image" class="publication-image" draggable="false" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
+                                <img src="2d_sl_img.png" alt="2d sl image" class="publication-image" draggable="false" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="publication-item">
+                        <div class="publication-content">
+                            <h3>Publication</h3>
+                            <h3>Towards improved measurements of bone conduction auditory brainstem responses in infants and adults: mitigation of stimulus artefact</h3>
+                            <p class="publication-authors">Aoi A. Hunsaker, Kristin M. Uhler, Kerry A. Walker, Nathaniel T. Greene, Andrew D. Brown</p>
+                            <p class="publication-venue"><em>International Journal of Audiology</em>, 2025</p>
+                            <p class="publication-description">Investigation of the impact of applying electromagnetic shielding on a bone conduction transducer when used in auditory brainstem response (ABR) measurments.</p>
+                                                        <p class="poster-link"><a href="https://doi.org/10.1080/14992027.2025.2465767" target="blank">Link to paper</a></p>
+                        </div>
+                        <div class="publication-image">
+                            <div class="image-placeholder">
+                                <img src="BCABRimg.jpg" alt="BC ABR image" class="publication-image" draggable="false" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
+                            </div>
+                        </div>
+                    </div>
+
+            <section class="talks-section">
+                <h2>Talks</h2>
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <div class="publication-content">
+                            <h3>On testing hearing sensitivity across the animal kingdom more quickly and accurately</h3>
+                            <ul class="talk-venues">
+                                <li>UW eScience Data Science Seminar — <a href="https://www.youtube.com/watch?v=889VWphW6S0" target="_blank">watch the talk</a></li>
+                                <li>UW Biology Department Graduate Student Seminar</li>
+                                <li>Auditory Neuroscience Training Grant Retreat</li>
+                                <li>Pacific Northwest Environmental Acoustics Seminar</li>
+                            </ul>
+                        </div>
+                        <div class="talk-photo">
+                            <img src="escience_talk.jpeg" alt="Aoi speaking at the eScience Data Science Seminar" draggable="false" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
                         </div>
                     </div>
                 </div>
