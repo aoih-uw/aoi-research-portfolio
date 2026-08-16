@@ -143,7 +143,7 @@
         .about-section p {
             margin-bottom: 20px;
             color: #555555;
-            font-size: 16px;
+            font-size: 13px;
         }
 
         .contact-links {
@@ -189,21 +189,48 @@
             font-weight: 700;
         }
 
+        .carousel {
+            position: relative;
+        }
+
         .gallery-strip {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+        }
+
+        .gallery-strip::-webkit-scrollbar {
+            display: none;
         }
 
         .gallery-strip img {
-            width: 100%;
-            height: 170px;
+            flex: 0 0 100%;
+            scroll-snap-align: center;
+            height: 340px;
             object-fit: cover;
             border-radius: 8px;
             display: block;
             user-select: none;
             pointer-events: none;
         }
+
+        .car-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid #dddddd;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            font-size: 20px;
+            color: #333333;
+            cursor: pointer;
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
 
         .slides-caption {
             font-size: 0.8em;
@@ -380,7 +407,6 @@
 
         .research-skills-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
 
@@ -776,15 +802,16 @@
         </header>
         <main>
 
-            <section class="slides-section">
-                <div class="gallery-strip">
-                    <img src="chapterillusts-03.png" alt="Scientific illustration commission" draggable="false" oncontextmenu="return false;">
-                    <img src="comparative_brains.PNG" alt="Comparative brain illustration" draggable="false" oncontextmenu="return false;">
-                    <img src="outdooraep.png" alt="In-field AEP recording setup" draggable="false" oncontextmenu="return false;">
-                    <img src="GUI_preview.png" alt="Adaptive AEP software interface" draggable="false" oncontextmenu="return false;">
-                </div>
-                <p class="slides-caption">Illustrated by Aoi Hunsaker. Do not use without permission.</p>
-            </section>
+            <div class="carousel">
+            <div class="gallery-strip" id="strip">
+                <img src="chapterillusts-03.png" alt="Scientific illustration commission" draggable="false" oncontextmenu="return false;">
+                <img src="comparative_brains.PNG" alt="Comparative brain illustration" draggable="false" oncontextmenu="return false;">
+                <img src="outdooraep.png" alt="In-field AEP recording setup" draggable="false" oncontextmenu="return false;">
+                <img src="GUI_preview.png" alt="Adaptive AEP software interface" draggable="false" oncontextmenu="return false;">
+            </div>
+            <button class="car-btn prev" onclick="strip.scrollBy({left: -strip.clientWidth, behavior: 'smooth'})">&#8249;</button>
+            <button class="car-btn next" onclick="strip.scrollBy({left: strip.clientWidth, behavior: 'smooth'})">&#8250;</button>
+        </div>
 
             <section class="about-section">
                 <h2>About Me</h2>
@@ -863,7 +890,7 @@
                         <div class="publication-content">
                             <h3>Publication</h3>
                             <h3>Two-dimensional sound localization during hearing protector use: Human performance and acoustic prediction</h3>
-                            <p class="publication-authors">Daniel J. Audet, Aoi A. Hunsaker, Madelyn A. Butler, Carol A. Sammeth, Allison Podolski, Theodore F. Argo IV, David A. Anderson, Nathaniel T. Greene, Andrew D. Brown</p>
+                            <p class="publication-authors">David J. Audet, Aoi A. Hunsaker, Mallory A. Butler, Carol A. Sammeth, Alexandria Podolski, Theodore F. Argo IV, David A. Anderson, Nathaniel T. Greene, Andrew D. Brown</p>
                             <p class="publication-venue"><em>The Journal of the Acoustical Society of America</em>, 159(4), 3130–3147, 2026</p>
                             <p class="poster-link"><a href="https://pubs.aip.org/asa/jasa/article/159/4/3130/3386732" target="blank">Link to paper</a></p>
                         </div>
@@ -891,7 +918,8 @@
                     </div>
 
             <section class="talks-section">
-                <h2>Talks</h2>
+                <h2></h2>
+                <h2>Seminar Presentations</h2>
                 <div class="publications-list">
                     <div class="publication-item">
                         <div class="publication-content">
