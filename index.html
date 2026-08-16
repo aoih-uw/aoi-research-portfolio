@@ -237,16 +237,8 @@
             color: #333333;
             cursor: pointer;
         }
-
         .prev { left: 10px; }
         .next { right: 10px; }
-
-        .slides-caption {
-            font-size: 0.8em;
-            color: #888888;
-            font-style: italic;
-            margin-top: 8px;
-        }
 
         .publications-section {
             margin-bottom: 40px;
@@ -1069,5 +1061,14 @@
             <p>&copy; 2026 Aoi Hunsaker. All rights reserved.</p>
         </footer>
     </div>
+    <script>
+    let timer = setInterval(next, 4000);
+    function next() {
+        const atEnd = strip.scrollLeft + strip.clientWidth >= strip.scrollWidth - 1;
+        strip.scrollTo({left: atEnd ? 0 : strip.scrollLeft + strip.clientWidth, behavior: 'smooth'});
+    }
+    strip.parentElement.onmouseenter = () => clearInterval(timer);
+    strip.parentElement.onmouseleave = () => timer = setInterval(next, 4000);
+    </script>
 </body>
 </html>
