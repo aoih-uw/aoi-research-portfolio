@@ -84,7 +84,7 @@
             font-weight: 700;
             line-height: 1.05;
             color: #222222;
-            margin-bottom: -10px;
+            margin-bottom: 8px;
         }
 
         .header-content p {
@@ -213,16 +213,16 @@
         }
 
         .gallery-strip img {
-    flex: 0 0 100%;
-    scroll-snap-align: center;
-    height: 340px;
-    object-fit: contain;
-    background-color: #fafafa;
-    border-radius: 8px;
-    display: block;
-    user-select: none;
-    pointer-events: none;
-}
+            flex: 0 0 100%;
+            scroll-snap-align: center;
+            height: 340px;
+            object-fit: contain;
+            background-color: #ffffff;
+            border-radius: 8px;
+            display: block;
+            user-select: none;
+            pointer-events: none;
+        }
 
         .car-btn {
             position: absolute;
@@ -408,6 +408,7 @@
 
         .research-skills-list {
             display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
         }
 
@@ -621,12 +622,8 @@
                 gap: 10px;
             }
 
-            .gallery-strip {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
             .gallery-strip img {
-                height: 140px;
+                height: 220px;
             }
 
             .viz-table {
@@ -804,16 +801,16 @@
         <main>
 
             <div class="carousel">
-            <div class="gallery-strip" id="strip">
-                <img src="chapterillusts-03.png" alt="Scientific illustration commission" draggable="false" oncontextmenu="return false;">
-                <img src="comparative_brains.PNG" alt="Comparative brain illustration" draggable="false" oncontextmenu="return false;">
-                <img src="outdooraep.png" alt="In-field AEP recording setup" draggable="false" oncontextmenu="return false;">
-                <img src="GUI_preview.png" alt="Adaptive AEP software interface" draggable="false" oncontextmenu="return false;">
+                <div class="gallery-strip" id="strip">
+                    <img src="chapterillusts-03.png" alt="Scientific illustration commission" draggable="false" oncontextmenu="return false;">
+                    <img src="comparative_brains.PNG" alt="Comparative brain illustration" draggable="false" oncontextmenu="return false;">
+                    <img src="outdooraep.png" alt="In-field AEP recording setup" draggable="false" oncontextmenu="return false;">
+                    <img src="GUI_preview.png" alt="Adaptive AEP software interface" draggable="false" oncontextmenu="return false;">
+                </div>
+                <button class="car-btn prev" onclick="strip.scrollBy({left: -strip.clientWidth, behavior: 'smooth'})">&#8249;</button>
+                <button class="car-btn next" onclick="strip.scrollBy({left: strip.clientWidth, behavior: 'smooth'})">&#8250;</button>
             </div>
-            <button class="car-btn prev" onclick="strip.scrollBy({left: -strip.clientWidth, behavior: 'smooth'})">&#8249;</button>
-            <button class="car-btn next" onclick="strip.scrollBy({left: strip.clientWidth, behavior: 'smooth'})">&#8250;</button>
-        </div>
-        <p class="slides-caption">Illustrated by Aoi Hunsaker. Do not use without permission.</p>
+            <p class="slides-caption">Illustrated by Aoi Hunsaker. Do not use without permission.</p>
 
             <section class="about-section">
                 <h2>About Me</h2>
@@ -822,9 +819,7 @@
                         <img src="lab_shot.jpeg" alt="Aoi" style="width: 200px; object-fit: cover; border: 2px solid #cccccc; border-radius: 8px; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; pointer-events: none; -webkit-user-drag: none; -webkit-touch-callout: none;" draggable="false" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
                     </div>
                     <div class="about-text">
-                        <p>I am a PhD student in the Neural Systems and Behavior program within the Psychology department at the University of Washington, where I study what and how animals across the animal kingdom hear.</p>
-
-                        <p>I currently serve on the Student Council of the Acoustical Society of America.</p>
+                        <p>I am a PhD student in the Neural Systems and Behavior program within the Psychology Department at the University of Washington. I build hardware and software tools to study what and how animals hear.</p>
                         
                         <div class="contact-links">
                             <a href="Hunsaker_resume_May_2026.pdf" target="_blank">CV</a>
@@ -879,11 +874,10 @@
                             <h3> Novel auditory threshold measurements in a Chimera species, spotted ratfish <em>(Hydrolagus colliei)</em> using adaptive Auditory Evoked Potential (AEP) Technique</h3>
                             <p class="publication-authors">Aoi A. Hunsaker, Andrew D. Brown, David R. Dall'Osto, Peter H. Dahl, Joseph A. Sisneros</p>
                             <p class="publication-venue"><em>The Effects of Noise on Aquatic Life</em>, 2025</p>
-                            <p class="publication-description">Novel auditory response measurements in a holocephalan species using an adaptive AEP recording method.</p>
                         </div>
                         <div class="publication-image">
                             <div class="image-placeholder">
-                                <img src="ENAL_2025_Poster.PNG" alt="ENAL 2025 image" class="publication-image" draggable="false" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
+                                <img src="ENAL_2025_Poster.PNG" alt="ENAL 2025 image" class="publication-image" style="object-fit: contain; background-color: #ffffff;" draggable="false" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
                             </div>
                         </div>
                     </div>
@@ -910,7 +904,7 @@
                             <p class="publication-authors">Aoi A. Hunsaker, Kristin M. Uhler, Kerry A. Walker, Nathaniel T. Greene, Andrew D. Brown</p>
                             <p class="publication-venue"><em>International Journal of Audiology</em>, 2025</p>
                             <p class="publication-description">Investigation of the impact of applying electromagnetic shielding on a bone conduction transducer when used in auditory brainstem response (ABR) measurments.</p>
-                                                        <p class="poster-link"><a href="https://doi.org/10.1080/14992027.2025.2465767" target="blank">Link to paper</a></p>
+                            <p class="poster-link"><a href="https://doi.org/10.1080/14992027.2025.2465767" target="blank">Link to paper</a></p>
                         </div>
                         <div class="publication-image">
                             <div class="image-placeholder">
@@ -918,9 +912,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
 
             <section class="talks-section">
-                <h2></h2>
                 <h2>Seminar Presentations</h2>
                 <div class="publications-list">
                     <div class="publication-item">
